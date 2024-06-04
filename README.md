@@ -25,6 +25,7 @@
         - [1.9.3.2.1. Installation des packages NuGet](#19321-installation-des-packages-nuget)
       - [1.9.3.3. Contrôle du code source](#1933-contrôle-du-code-source)
       - [1.9.3.4. Affichage de la liste des employés](#1934-affichage-de-la-liste-des-employés)
+  - [1.10. Tests](#110-tests)
 
 ## 1.1. Description
 
@@ -272,7 +273,7 @@ Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
 
 La liste des employés est affichée dans un DataGrid. Le DataGrid est un contrôle WPF qui permet d'afficher des données sous forme de tableau. Il est très flexible et permet de personnaliser l'affichage des données. Dans notre cas, nous avons utilisé un DataGrid pour afficher les employés. Chaque ligne du DataGrid correspond à un employé. Les colonnes du DataGrid correspondent aux propriétés de l'employé. Par exemple, la colonne `Nom` affiche le nom de l'employé, la colonne `Prénom` affiche le prénom de l'employé, etc.
 
-## Tests
+## 1.10. Tests
 
 Le scénario suivant permet de valider le fonctionnement de l'application :  
 ![01-login](https://github.com/briacl/Mediatek86/assets/102411894/95a29104-4375-4b20-a81d-335b2d012d54)
