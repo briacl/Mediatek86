@@ -69,6 +69,27 @@ namespace Mediatek86.Views
                 MessageBox.Show("Veuillez sélectionner un personnel à supprimer.");
                 return;
             }
+            // Demande de confirmation
+            MessageBoxResult result = MessageBox.Show("Voulez-vous vraiment supprimer ce personnel ?", "Confirmation", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes) {
+                using (var db = new MyDbContext())
+                {
+                    // On obtient une référence à l'objet à partir de la base de données
+                    Personnel? personnelToDelete = db.Personnel?.Find(currentPersonnel?.IdPersonnel);
+                    if (personnelToDelete == null)
+                    {
+                        MessageBox.Show("Personnel non trouvé !");
+                        return;
+                    }
+
+                    // On marque l'objet pour la suppression
+                    db.Personnel?.Remove(personnelToDelete);
+
+                    // Effectuez la suppression
+                    db.SaveChanges();
+                }
+                poulateListePersonnels();
+            }
 
         }
 
