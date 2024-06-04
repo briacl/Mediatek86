@@ -7,6 +7,10 @@ namespace Mediatek86.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Constructeur de la fenêtre principale.
+        /// Le constructeur n'initialise pas directement la fenêtre principale, mais commence par afficher la fenêtre de connexion.
+        /// </summary>
         public MainWindow()
         {
             // Créez une nouvelle instance de LoginWindow

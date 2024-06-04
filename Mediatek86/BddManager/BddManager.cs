@@ -2,6 +2,9 @@
 
 namespace Mediatek86.CnedDB
 {
+    /// <summary>
+    /// Classe non couverte par la licence MIT elle est la propriété de son auteur initial
+    /// </summary>
     public class BddManager
     {
         /// <summary>

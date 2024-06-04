@@ -1,4 +1,4 @@
-﻿using Mediatek86.data;
+﻿using Mediatek86.Data;
 using Mediatek86.Models;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +10,9 @@ namespace Mediatek86.Views
     /// </summary>
     public partial class ListePersonnels : Page
     {
+        /// <summary>
+        /// Constructeur de la page ListePersonnels.
+        /// </summary>
         public ListePersonnels()
         {
             InitializeComponent();
@@ -42,7 +45,7 @@ namespace Mediatek86.Views
         /// Handler pour le bouton de modification du personnel sélectionné.
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"
+        /// <param name="e"></param>
         private void btnModifierPersonnel_Click(object sender, RoutedEventArgs e)
         {
             Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
@@ -60,7 +63,7 @@ namespace Mediatek86.Views
         /// Handler pour le bouton de suppression du personnel sélectionné.
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"
+        /// <param name="e"></param>
         private void btnSupprimerPersonnel_Click(object sender, RoutedEventArgs e)
         {
             Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
@@ -97,7 +100,7 @@ namespace Mediatek86.Views
         /// Handler pour le bouton de gestion des absences du personnel sélectionné.
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"
+        /// <param name="e"></param>
         private void btnGererAbsences_Click(object sender, RoutedEventArgs e)
         {
             Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;

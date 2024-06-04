@@ -3,6 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mediatek86.Models
 {
+    /// <summary>
+    /// Classe Absence pour la gestion des absences des personnels.
+    /// Cette classée est mapée sur la table Absence de la base de données.
+    /// </summary>
     [Table("absence")]
     public class Absence
     {

@@ -1,11 +1,14 @@
 using System;
 using System.Windows;
 using Mediatek86.Models;
-using Mediatek86.data;
+using Mediatek86.Data;
 namespace Mediatek86.Views
 {
     public partial class AddPersonnelWindow : Window
     {
+        /// <summary>
+        /// Constructeur de la fenï¿½tre d'ajout d'un personnel.
+        /// </summary>
         public AddPersonnelWindow()
         {
             InitializeComponent();
@@ -15,6 +18,11 @@ namespace Mediatek86.Views
             }
         }
 
+        /// <summary>
+        /// Ajout d'un personnel aprï¿½s confirmation par l'utilisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AjouterButton_Click(object sender, RoutedEventArgs e)
         {
             Service? selectedService = ServiceComboBox.SelectedItem as Service;
@@ -34,7 +42,7 @@ namespace Mediatek86.Views
                 db.SaveChanges();
             }
 
-            MessageBox.Show("Personnel ajouté avec succès !");
+            MessageBox.Show("Personnel ajoutï¿½ avec succï¿½s !");
             Close();
         }
     }

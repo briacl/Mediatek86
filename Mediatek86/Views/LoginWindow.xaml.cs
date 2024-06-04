@@ -1,4 +1,4 @@
-﻿using Mediatek86.data;
+﻿using Mediatek86.Data;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -6,10 +6,22 @@ namespace Mediatek86.Views
 {
     public partial class LoginWindow : Window
     {
+        /// <summary>
+        /// Constructeur de la fenêtre de connexion.
+        /// </summary>
         public LoginWindow()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Handler pour le bouton de connexion.
+        /// Vérifie si le login et le mot de passe saisis par l'utilisateur sont corrects.
+        /// Si c'est le cas, ferme la fenêtre de connexion et ouvre la fenêtre principale.
+        /// Sinon, affiche un message d'erreur et reste sur la fenêtre de connexion.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             // Récupérez le login et le mot de passe saisis par l'utilisateur

@@ -1,11 +1,16 @@
-﻿using Mediatek86.data;
+﻿using Mediatek86.Data;
 using Mediatek86.Views;
 using System.Windows;
 
 namespace Mediatek86
 {
     /// <summary>
-    /// Classe principale de l'application.
+    /// Classe principale de l'application.<br/>
+    /// Pour plus d'informations sur les classes de l'application, veuillez consulter les espace de noms suivants :<br/>
+    /// <see cref="Mediatek86"/><br/>
+    /// <see cref="Mediatek86.Data"/><br/>
+    /// <see cref="Mediatek86.Models"/><br/>
+    /// <see cref="Mediatek86.Views"/><br/>
     /// </summary>
     public partial class App : Application
     {
@@ -16,7 +21,7 @@ namespace Mediatek86
         /// Si la connexion échoue, on affiche un message d'erreur et on ferme l'application
         /// Ensuite on affiche la fenêtre de connexion
         /// Si l'utilisateur se connecte avec succès, on affiche la fenêtre principale
-        /// <summary>
+        /// </summary>
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);

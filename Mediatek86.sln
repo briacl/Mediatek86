@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediatek86", "Mediatek86\Mediatek86.csproj", "{992A2ED3-7AAF-4F30-AE54-ADEA65BD9020}"
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Documentation", "Documentation\Documentation.shfbproj", "{816F991A-498B-4AAF-83CD-7A207988C26F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{992A2ED3-7AAF-4F30-AE54-ADEA65BD9020} = {992A2ED3-7AAF-4F30-AE54-ADEA65BD9020}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

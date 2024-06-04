@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Windows;
 using Mediatek86.Models;
-using Mediatek86.data;
+using Mediatek86.Data;
 
 namespace Mediatek86.Views
 {
@@ -62,7 +62,7 @@ namespace Mediatek86.Views
                 return;
             }else
                 {
-                personnel.IdService = (ServiceComboBox.SelectedItem as Service).IdService;
+                personnel.IdService = ((Service)ServiceComboBox.SelectedItem).IdService;
             }
 
             // On met à jour le personnel dans la base de données
