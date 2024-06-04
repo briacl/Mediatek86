@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Navigation;
 
 namespace Mediatek86.Views
 {
@@ -16,6 +17,12 @@ namespace Mediatek86.Views
             // Créez une nouvelle instance de LoginWindow
             LoginWindow loginWindow = new LoginWindow();
 
+            // Cache les boutons de navigation
+            NavigationWindow? navWindow = Window.GetWindow(this) as NavigationWindow;
+            if (navWindow != null)
+            {
+                navWindow.ShowsNavigationUI = false;
+            }
             // Affichez la fenêtre de connexion
             if (loginWindow.ShowDialog() == true)
             {
