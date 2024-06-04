@@ -13,6 +13,11 @@ namespace Mediatek86.Views
         public ListePersonnels()
         {
             InitializeComponent();
+            poulateListePersonnels();
+        }
+
+        private void poulateListePersonnels()
+        {
             using (var db = new MyDbContext())
             {
                 var personnels = db.Personnel?.Include("Service").Include("Absences").ToList();
@@ -29,6 +34,8 @@ namespace Mediatek86.Views
         {
             AddPersonnelWindow addPersonnelWindow = new AddPersonnelWindow();
             addPersonnelWindow.ShowDialog();
+            poulateListePersonnels();
+
         }
 
         /// <summary>
@@ -44,6 +51,9 @@ namespace Mediatek86.Views
                 MessageBox.Show("Veuillez sélectionner un personnel à modifier.");
                 return;
             }
+            EditPersonnelWindow editPersonnelWindow = new EditPersonnelWindow(currentPersonnel);
+            editPersonnelWindow.ShowDialog();
+            poulateListePersonnels();
         }
 
         /// <summary>
@@ -56,9 +66,10 @@ namespace Mediatek86.Views
             Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
             if (currentPersonnel == null)
             {
-                MessageBox.Show("Veuillez sélectionner un personnel à modifier.");
+                MessageBox.Show("Veuillez sélectionner un personnel à supprimer.");
                 return;
             }
+
         }
 
         /// <summary>
