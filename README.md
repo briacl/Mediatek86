@@ -272,3 +272,26 @@ Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
 
 La liste des employés est affichée dans un DataGrid. Le DataGrid est un contrôle WPF qui permet d'afficher des données sous forme de tableau. Il est très flexible et permet de personnaliser l'affichage des données. Dans notre cas, nous avons utilisé un DataGrid pour afficher les employés. Chaque ligne du DataGrid correspond à un employé. Les colonnes du DataGrid correspondent aux propriétés de l'employé. Par exemple, la colonne `Nom` affiche le nom de l'employé, la colonne `Prénom` affiche le prénom de l'employé, etc.
 
+## Tests
+
+Le scénario suivant permet de valider le fonctionnement de l'application :  
+![01-login](https://github.com/briacl/Mediatek86/assets/102411894/95a29104-4375-4b20-a81d-335b2d012d54)
+![02-login_incorrect](https://github.com/briacl/Mediatek86/assets/102411894/765e6c90-e824-49ca-bc3d-60cdce9fd737)
+![03-utilisateur_inconnu](https://github.com/briacl/Mediatek86/assets/102411894/61d9fc0e-d0de-46fa-bbe6-d7f766efc706)
+![05-liste_personnels](https://github.com/briacl/Mediatek86/assets/102411894/b86c1249-44e3-4bb2-b5ce-882895a23abb)
+![06-Capture d’écran 2024-06-04 185459](https://github.com/briacl/Mediatek86/assets/102411894/a6796c6d-131b-41fc-88bb-d6320c975524)
+![08-ajout_personnel](https://github.com/briacl/Mediatek86/assets/102411894/52d7b956-972e-4142-ad82-6c50fbba897e)
+![09-personnel_ajoute](https://github.com/briacl/Mediatek86/assets/102411894/c48553d0-b9a7-49c6-ba94-0d3bd9cdfc07)
+![10-confirmation_modification](https://github.com/briacl/Mediatek86/assets/102411894/e85f8f16-99ac-4b54-9f6a-a90a6f31e5be)
+![11-modification_personnel](https://github.com/briacl/Mediatek86/assets/102411894/3908ca70-8b66-490a-87d0-2b75d60152af)
+![12-modification_enregistree](https://github.com/briacl/Mediatek86/assets/102411894/cbfd8c0c-cc3f-428d-a787-35c1bc3d0b9f)
+![13-validation_modification](https://github.com/briacl/Mediatek86/assets/102411894/68e68c93-e713-4aef-a1ae-c25877564f01)
+![14-confirmation_suppression](https://github.com/briacl/Mediatek86/assets/102411894/29738d83-0183-4b54-a7b4-eb56cbef3e0e)
+
+
+
+
+
+
+
+
