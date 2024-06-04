@@ -12,7 +12,7 @@ namespace Mediatek86.Views
         /// <summary>
         /// Constructeur de la fenêtre d'édition d'une absence.
         /// </summary>
-        /// <param name="absence"></param>
+        /// <param name="absence">L'absence à modifier</param>
         public EditAbsenceWindow(Absence absence)
         {
             InitializeComponent();
