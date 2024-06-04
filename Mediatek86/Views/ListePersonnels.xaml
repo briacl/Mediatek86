@@ -1,0 +1,46 @@
+﻿<Page x:Class="Mediatek86.Views.ListePersonnels"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Mediatek86.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Liste des personnels">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="myTitre" Content="Les personnels" Height="45" Grid.Row="0" FontSize="16" VerticalAlignment="Center"/>
+        <DataGrid x:Name="myDataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Margin="0,0,0,5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding IdPersonnel}"/>
+                <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
+                <DataGridTextColumn Header="Prénom" Binding="{Binding Prenom}"/>
+                <DataGridTextColumn Header="Téléphone" Binding="{Binding Tel}"/>
+                <DataGridTextColumn Header="eMail" Binding="{Binding Mail}"/>
+                <DataGridTextColumn Header="Service" Binding="{Binding Service.Nom}"/>
+                <DataGridTextColumn Header="Absences" Binding="{Binding NombreAbsences}"/>
+                
+                <!-- Ajoutez plus de colonnes au besoin -->
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnAjouterPersonnel" Grid.Column="0" Content="Ajouter" Margin="5,0,5,5" Click="btnAjouterPersonnel_Click"/>
+            <Button x:Name="btnModifierPersonnel" Grid.Column="1" Content="Modifier" Margin="5,0,5,5" Click="btnModifierPersonnel_Click"/>
+            <Button x:Name="btnSupprimerPersonnel" Grid.Column="2" Content="Supprimer" Margin="5,0,5,5" Click="btnSupprimerPersonnel_Click"/>
+            <Button x:Name="btnGererAbsences" Grid.Column="3" Content="Absences" Margin="5,0,5,5" Click="btnGererAbsences_Click"/>
+        </Grid>
+    </Grid>
+    
+</Page>

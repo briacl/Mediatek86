@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="refresh" content="1;url=html/58dfe8ba-9775-4eb2-9ddd-49ffcd5b1d62.htm">
+	<script type="text/javascript">
+		// Use an alternate default page if a topic is specified in the query string
+		var location = window.location;
+		var queryString = location.search;
+		if(queryString != "")
+		{
+			var idx, options = queryString.split(/[\?\=\&]/);
+			for(idx = 0; idx < options.length; idx++)
+			{
+				// Don't allow javascript, or references outside the current site
+				if(options[idx] == "topic" && idx + 1 < options.length && options[idx + 1].match(/^\w[\w\/.-]*$/))
+				{
+					location.replace(location.origin + location.pathname + options[idx + 1]);
+					break;
+				}
+			}
+		}
+		else
+			location.replace("html/58dfe8ba-9775-4eb2-9ddd-49ffcd5b1d62.htm");
+	</script>
+	<title>Mediatek86 une gestion de la m&#233;diath&#232;que de Vienne - Redirect</title>
+</head>
+<body>
+	<p>If you are not redirected automatically, follow this link to the <a href="html/58dfe8ba-9775-4eb2-9ddd-49ffcd5b1d62.htm">default topic</a>.</p>
+</body>
+</html>
