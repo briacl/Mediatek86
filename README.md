@@ -116,12 +116,12 @@ L'accès à l'application est sécurisé par un contrôle d'accès vérifiant le
 
 #### 1.8.2.1. Dépannage de la connexion ou modification des paramètres de connexion
 
-Il n'a pas été prévu dans le cahier des charges de l'application de permettre à l'utilisateur de modifier les paramètres de connexion à la base de données. Cependant, il est possible de modifier les paramètres de connexion en modifiant le contenu de la base de données. Pour ce faire, il est nécessaire de se connecter à la base de données avec un outil tel que MySQL Workbench. Il est alors possible de modifier les paramètres de connexion dans la table `responsable` de la base de données.  
+Il n'a pas été prévu dans le cahier des charges de l'application de permettre à l'utilisateur de modifier les paramètres de connexion à l'application'. Cependant, il est possible de modifier les paramètres de connexion en modifiant le contenu de la base de données. Pour ce faire, il est nécessaire de se connecter à la base de données avec un outil tel que MySQL Workbench. Il est alors possible de modifier les paramètres de connexion dans la table `responsable` de la base de données.  
 
 Voici comment créer l'utilisateur `admin` avec le mot de passe `adminpwd` :
 
 ```sql
-INSERT INTO `responsable` (`login`, `pwd`) VALUES ('admin',  SHA2('admin', 256));
+INSERT INTO `responsable` (`login`, `pwd`) VALUES ('admin',  SHA2('adminpwd', 256));
 ```
 
 Voici comment modifier le mot de passe de l'utilisateur `admin` pour le remplacer par `newpwd` :
@@ -132,8 +132,8 @@ UPDATE `responsable` SET `pwd` = SHA2('newpwd', 256) WHERE `login` = 'admin';
 
 ### 1.8.3. Gestion du personnel
 
-L'application permet de consulter la liste des employés, d'ajouter un employé, de modifier un employé.  
-Le fonctionnement est simple sur la page d'accueil de l'application, la liste des employés est affichée.  
+L'application permet de consulter la liste des employés, d'ajouter un employé, de modifier un employé.    
+Le fonctionnement est simple; sur la page d'accueil de l'application, la liste des employés est affichée.  
 Un bouton `Ajouter` permet d'ajouter un employé.  
 Après avoir sélectionné un employé dans la liste, le bouton `Modifier` permet de modifier les informations de l'employé.
 Après avoir sélectionné un employé dans la liste, le bouton `Supprimer` permet de supprimer l'employé.
