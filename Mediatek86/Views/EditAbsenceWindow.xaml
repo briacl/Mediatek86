@@ -1,0 +1,27 @@
+﻿<Window x:Class="Mediatek86.Views.EditAbsenceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Modifier une absence" Height="242" Width="314">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Date de début" Grid.Row="0"/>
+        <DatePicker x:Name="DateDebutPicker" Grid.Row="1"/>
+
+        <Label Content="Date de fin" Grid.Row="2"/>
+        <DatePicker x:Name="DateFinPicker" Grid.Row="3"/>
+
+        <Label Content="Motif" Grid.Row="4"/>
+        <ComboBox x:Name="MotifComboBox" DisplayMemberPath="Libelle" Grid.Row="5"/>
+
+        <Button Content="Modifier" Click="ModifierButton_Click" Grid.Row="6" Margin="5,5,5,5"/>
+    </Grid>
+</Window>

@@ -4,10 +4,13 @@ using Mediatek86.Models;
 using Mediatek86.Data;
 namespace Mediatek86.Views
 {
+    /// <summary>
+    /// Classe AddPersonnelWindow pour l'ajout d'un personnel.
+    /// </summary>
     public partial class AddPersonnelWindow : Window
     {
         /// <summary>
-        /// Constructeur de la fen�tre d'ajout d'un personnel.
+        /// Constructeur de la fenêtre d'ajout d'un personnel.
         /// </summary>
         public AddPersonnelWindow()
         {
@@ -19,12 +22,20 @@ namespace Mediatek86.Views
         }
 
         /// <summary>
-        /// Ajout d'un personnel apr�s confirmation par l'utilisateur
+        /// Ajout d'un personnel après confirmation par l'utilisateur
+        /// la fonction vérifie que tous les champs sont remplis
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void AjouterButton_Click(object sender, RoutedEventArgs e)
         {
+            // On vérifie que tous les champs sont remplis
+            if (NomTextBox.Text == "" || PrenomTextBox.Text == "" || TelTextBox.Text == "" || MailTextBox.Text == "" || ServiceComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.");
+                return;
+            }
+
             Service? selectedService = ServiceComboBox.SelectedItem as Service;
             var personnel = new Personnel
             {
@@ -42,7 +53,7 @@ namespace Mediatek86.Views
                 db.SaveChanges();
             }
 
-            MessageBox.Show("Personnel ajout� avec succ�s !");
+            MessageBox.Show("Personnel ajouté avec succès !");
             Close();
         }
     }

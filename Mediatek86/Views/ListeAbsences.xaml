@@ -17,8 +17,8 @@
         <Label x:Name="myTitre" Content="Les absences" Height="45" Grid.Row="0" FontSize="16" VerticalAlignment="Center"/>
         <DataGrid x:Name="myDataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Margin="0,0,0,5">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Date de début" Binding="{Binding DateDebut}"/>
-                <DataGridTextColumn Header="Date de fin" Binding="{Binding DateFin}"/>
+                <DataGridTextColumn Header="Date de début" Binding="{Binding DateDebut, StringFormat=dd/MM/yyyy}"/>
+                <DataGridTextColumn Header="Date de fin" Binding="{Binding DateFin, StringFormat=dd/MM/yyyy}"/>
                 <DataGridTextColumn Header="Motif" Binding="{Binding Motif.Libelle}"/>
             </DataGrid.Columns>
         </DataGrid>

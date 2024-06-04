@@ -32,7 +32,7 @@ namespace Mediatek86.Views
         /// <param name="e"></param>
         private void btnAjouterAbsence_Click(object sender, RoutedEventArgs e)
         {
-            // Ajoutez votre code pour ajouter une absence ici
+            populateListAbsence(personnel);
         }
 
         /// <summary>
@@ -42,7 +42,14 @@ namespace Mediatek86.Views
         /// <param name="e"></param>
         private void btnModifierAbsence_Click(object sender, RoutedEventArgs e)
         {
-            // Ajoutez votre code pour modifier une absence ici
+            if (myDataGrid.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez sélectionner une absence à modifier.");
+                return;
+            }
+            EditAbsenceWindow editAbsenceWindow = new EditAbsenceWindow((Absence)myDataGrid.SelectedItem);
+            editAbsenceWindow.ShowDialog();
+            populateListAbsence(personnel);
         }
 
         /// <summary>
@@ -57,15 +64,20 @@ namespace Mediatek86.Views
             if (result == MessageBoxResult.Yes) {
                 using (var db = new MyDbContext())
                     {
-                    // On récupère l'absence sélectionnée
-                    Absence? absence = myDataGrid.SelectedItem as Absence;
-                    if (absence != null)
+                    Absence? selectedAbsence = myDataGrid.SelectedItem as Absence;
+                    
+                    if (selectedAbsence != null)
                     {
-                        // On supprime l'absence de la base de données
-                        db.Absence?.Remove(absence);
-                        db.SaveChanges();
-                        // On rafraîchit la liste des absences
-                        populateListAbsence(personnel);
+                        // On récupère l'absence sélectionnée
+                        Absence? absenceToDelete = db.Absence?.Find([selectedAbsence?.IdPersonnel, selectedAbsence?.DateDebut]);
+                        // On supprime l'absence de la base de données si elle existe
+                        if (absenceToDelete != null)
+                        {
+                            db.Absence?.Remove(absenceToDelete);
+                            db.SaveChanges();
+                            // On rafraîchit la liste des absences
+                            populateListAbsence(personnel);
+                        }
                     }
                 }
             }

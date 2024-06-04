@@ -46,6 +46,12 @@ namespace Mediatek86.Views
         /// <param name="e"></param>
         private void ModifierButton_Click(object sender, RoutedEventArgs e)
         {
+            // On vérifie que tous les champs sont remplis
+            if (NomTextBox.Text == "" || PrenomTextBox.Text == "" || TelTextBox.Text == "" || MailTextBox.Text == "" || ServiceComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.");
+                return;
+            }
             // Il faut afficher une MessageBox pour confirmer la modification
             MessageBoxResult result = MessageBox.Show("Voulez-vous vraiment modifier ce personnel ?", "Confirmation", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.No)
