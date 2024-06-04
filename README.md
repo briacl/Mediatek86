@@ -14,6 +14,9 @@
     - [1.8.2. Contrôle d'accès à l'application](#182-contrôle-daccès-à-lapplication)
       - [1.8.2.1. Dépannage de la connexion ou modification des paramètres de connexion](#1821-dépannage-de-la-connexion-ou-modification-des-paramètres-de-connexion)
     - [1.8.3. Gestion du personnel](#183-gestion-du-personnel)
+  - [1.9. Processus de développement](#19-processus-de-développement)
+    - [1.9.1. Installation des outils de développement](#191-installation-des-outils-de-développement)
+    - [1.9.2. Conception de la base de données](#192-conception-de-la-base-de-données)
 
 ## 1.1. Description
 
@@ -137,3 +140,21 @@ Le fonctionnement est simple; sur la page d'accueil de l'application, la liste d
 Un bouton `Ajouter` permet d'ajouter un employé.  
 Après avoir sélectionné un employé dans la liste, le bouton `Modifier` permet de modifier les informations de l'employé.
 Après avoir sélectionné un employé dans la liste, le bouton `Supprimer` permet de supprimer l'employé.
+
+## 1.9. Processus de développement
+
+Le développement de l'application a été réalisé en plusieurs étapes.
+
+### 1.9.1. Installation des outils de développement
+
+- Installation de Visual Studio 2022
+  - Les options C# et .NET 8.0 sont installées
+- Installation de MariaDB 11.4.2 [depuis le site officiel](https://dlm.mariadb.com/3829198/MariaDB/mariadb-11.4.2/winx64-packages/mariadb-11.4.2-winx64.msi)
+- Installation de Looping MCD 4.0 [depuis le site officiel](https://www.looping-mcd.fr/Looping.zip)
+
+### 1.9.2. Conception de la base de données
+
+Le modèle conceptuel de données a été réalisé avec Looping MCD 4.0. 
+
+
+La table `responsable` a été crée dans Looping puis [le script de création des tables](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/data/SQL/createDatabase.sql) a été généré et a été complété pour créer la base de données appelée `mediatek86` dans le même script. 
