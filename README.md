@@ -94,7 +94,7 @@ Une étude du cachier des charges fourni par l'entreprise nous a permis de défi
 
 ### 1.8.1. Contrôle d'accès à la base de données
 
-La connexion entre la base de données et l'application est sécurisée par un contrôle d'accès. Un utilisateur de la base de données doit être créé avec les droits nécessaires pour accéder à la base de données. La chaîne de connexion est stockée dans le fichier `App.config` situé dans le répertoire de l'application.  
+La connexion entre la base de données et l'application est sécurisée par un contrôle d'accès. Un utilisateur de la base de données doit être créé avec les droits nécessaires pour accéder à la base de données. La chaîne de connexion est stockée dans le fichier `App.config` situé dans le répertoire de l'application.  Notez que le fichier s'appelle `Mediatek86.dll.config` dans le répertoire `bin\Debug` ou `bin\Release` après la compilation du projet.
 
 Voici par exemple une configuration valide pour la chaîne de connexion et les paramètres de runtime:
 
