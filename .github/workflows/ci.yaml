@@ -25,3 +25,13 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
       working-directory: Mediatek86
+
+    - name: Publish
+      working-directory: Mediatek86
+      run: dotnet publish --configuration Release --runtime win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o ./publish
+
+    - name: Archive
+      uses: actions/upload-artifact@v4
+      with:
+        name: windows-x64
+        path: ./Mediatek86/publish/
