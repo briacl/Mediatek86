@@ -156,5 +156,6 @@ Le développement de l'application a été réalisé en plusieurs étapes.
 
 Le modèle conceptuel de données a été réalisé avec Looping MCD 4.0. 
 
+![mcd](https://github.com/briacl/Mediatek86/assets/102411894/e4a4c7c7-69c5-4664-a5f3-aad87b12d52b)
 
 La table `responsable` a été crée dans Looping puis [le script de création des tables](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/data/SQL/createDatabase.sql) a été généré et a été complété pour créer la base de données appelée `mediatek86` dans le même script. 
