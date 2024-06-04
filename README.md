@@ -17,6 +17,14 @@
   - [1.9. Processus de développement](#19-processus-de-développement)
     - [1.9.1. Installation des outils de développement](#191-installation-des-outils-de-développement)
     - [1.9.2. Conception de la base de données](#192-conception-de-la-base-de-données)
+      - [1.9.2.1. Génération d'un jeu de données de test](#1921-génération-dun-jeu-de-données-de-test)
+      - [1.9.2.2. Nettoyage de la base de données](#1922-nettoyage-de-la-base-de-données)
+    - [1.9.3. Développement de l'application](#193-développement-de-lapplication)
+      - [1.9.3.1. Installation des extensions Visual Studio](#1931-installation-des-extensions-visual-studio)
+      - [1.9.3.2. Création du projet](#1932-création-du-projet)
+        - [1.9.3.2.1. Installation des packages NuGet](#19321-installation-des-packages-nuget)
+      - [1.9.3.3. Contrôle du code source](#1933-contrôle-du-code-source)
+      - [1.9.3.4. Affichage de la liste des employés](#1934-affichage-de-la-liste-des-employés)
 
 ## 1.1. Description
 
@@ -158,4 +166,109 @@ Le modèle conceptuel de données a été réalisé avec Looping MCD 4.0.
 
 ![mcd](https://github.com/briacl/Mediatek86/assets/102411894/e4a4c7c7-69c5-4664-a5f3-aad87b12d52b)
 
-La table `responsable` a été crée dans Looping puis [le script de création des tables](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/data/SQL/createDatabase.sql) a été généré et a été complété pour créer la base de données appelée `mediatek86` dans le même script. 
+La table `responsable` a été créée dans Looping puis [le script de création des tables](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/data/SQL/createDatabase.sql) a été généré et a été complété pour créer la base de données appelée `mediatek86` et peupler les tables `motif` et `service` dans le même script. 
+
+Pour créer la base de données, il suffit de copier le contenu du script dans un éditeur de requêtes SQL tel que MySQL Workbench et de l'exécuter. 
+
+Une fois la base de données créée, nous avons créé un utilisateur `mediatek86` avec le mot de passe `mediatek86pwd` et les droits nécessaires pour accéder à la base de données. Cela a été fait avec les commandes suivantes :
+
+```sql
+CREATE USER 'mediatek86'@'localhost' IDENTIFIED BY 'mediatek86pwd';
+GRANT ALL PRIVILEGES ON mediatek86.*
+TO 'mediatek86'@'localhost';
+```
+
+#### 1.9.2.1. Génération d'un jeu de données de test
+
+Pour faciliter le développement de l'application, un jeu de données de test a été généré. Le jeu a été créé manuellement
+Ce jeu peut être modifié ou complété en fonction des besoins de test.  
+Il est consultable [ici](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/data/SQL/createTests.sql)  
+Nous avons décider d'utiliser des sous-requêtes pour insérer les données dans les tables `personnel` et `absence` afin de garantir l'intégrité référentielle et de permettre de passer plusieurs fois le jeu de tests sans risquer de conflits d'identifiants.
+
+#### 1.9.2.2. Nettoyage de la base de données
+
+Pour nettoyer la base de données et réinitialiser les données de test, il suffit d'exécuter les commande suivantes :
+
+```sql
+DELETE FROM `absence`;
+DELETE FROM `personnel`;
+```
+
+### 1.9.3. Développement de l'application
+
+#### 1.9.3.1. Installation des extensions Visual Studio
+
+Pour faciliter le développement, nous avons installé les extensions suivantes :
+
+- [SandCastle Help File Builder](https://github.com/EWSoftware/SHFB/releases/download/2024.2.18.0/SHFBInstaller_2024.2.18.0.zip) 2024.2.18.0
+
+#### 1.9.3.2. Création du projet
+
+Une solution vide a été créée dans Visual Studio 2022.
+Le projet a été créé avec Visual Studio 2022 en utilisant le modèle `WPF App (.NET)`.  
+Le projet a été nommé `Mediatek86` et a été enregistré dans le répertoire `C:\Users\Briacl\source\repos\Mediatek86`.  
+Un projet supplémentaire a été ajouté pour la documentation du code source. Le projet a été nommé `Documentation` et a été enregistré dans le répertoire `C:\Users\Briacl\source\repos\Mediatek86\Documentation`.
+
+##### 1.9.3.2.1. Installation des packages NuGet
+
+Pour faciliter le développement, nous avons installé les packages NuGet suivants :
+
+- [EntityFramework](https://www.nuget.org/packages/EntityFramework/6.4.4) 6.4.4
+- [MySql.Data](https://www.nuget.org/packages/MySql.Data/8.4.0) 8.4.0
+- [MySql.Data.EntityFramework](https://www.nuget.org/packages/MySql.Data.EntityFramework/8.4.0) 8.4.0
+
+#### 1.9.3.3. Contrôle du code source
+
+Pour sécuriser le code source, nous avons créer un [dépôt Git](https://github.com/briacl/Mediatek86) sur GitHub. 
+Le code source est versionné et les modifications sont commentées pour faciliter la compréhension du code.
+Pour se conformer aux standards de GitHub, nous avons ajouté un fichier `README.md` à la racine du dépôt. Ce fichier contient une description du projet, une licence, une documentation du code source et des informations sur le processus de développement. Ce fichier est écrit en Markdown pour faciliter la lecture sur le site GitHub. Une version PDF est également disponible pour une lecture hors ligne.  
+
+Le dépôt a été initialisé avec un fichier `.gitignore` pour ignorer les fichiers temporaires et les fichiers de configuration de Visual Studio.
+```powershell
+git init
+git config --global user.email "briacl@cned"
+git config --global user.name "briacl"
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin git@github.com:/briacl/Mediatek86.git
+git push -u origin main
+```	
+
+#### 1.9.3.4. Développement des classes métier
+
+Les classes métier ont été développées en suivant le modèle MVC.  
+Les classes `Personnel`, `Service`, `Motif`, `Responsable` et `Absence` ont été créées dans le [répertoire Models](https://github.com/briacl/Mediatek86/tree/main/Mediatek86/Models).  
+
+##### 1.9.3.4.1. [Responsable](https://briacl.github.io/Mediatek86/html/T_Mediatek86_Models_Responsable.htm)
+
+La classe `Responsable` est une classe métier qui représente un utilisateur de l'application.  
+Elle inclut une [méthode](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/Models/Responsable.cs#L30L39) `VerifierMotDePasse` qui permet de vérifier si le mot de passe saisi par l'utilisateur est correct.
+
+##### 1.9.3.4.2. [MyDbContext](https://briacl.github.io/Mediatek86/html/T_Mediatek86_Data_MyDbContext.htm)
+
+La classe `MyDbContext` est une classe qui hérite de `DbContext` et permet de faire correspondres les tables de la base de données avec les classes métiers. Elle met à profit les fonctionnalités d'Entity Framework et du connecteur natif Oracle MySql.Data pour simplifier l'accès aux données.  
+Nous avons choisi cette approche car c'est aujourd'hui la méthode la plus couramment utilisée pour accéder aux bases de données dans les applications .NET. 
+Elle permet de simplifier le code en utilisant des classes métiers pour manipuler les données au lieu d'écrire des requêtes SQL à la main. Cette approche ORM (Object-Relational Mapping) permet de réduire les erreurs et de faciliter la maintenance du code. Cela permet également de bénéficier des fonctionnalités avancées d'Entity Framework telles que le suivi des modifications, les migrations de base de données et les requêtes LINQ.
+
+### Développement des vues et des contrôleurs
+
+Les vues de l'application ont été créées en utilisant le designer de Visual Studio. Le choix du WPF a été fait pour sa facilité d'utilisation et sa compatibilité avec les applications Windows. De plus le WPF permet de créer des interfaces utilisateur riches et interactives. Même si l'application Mediatek86 est extrêmement simple, en théorie le WPF permet de créer des interfaces utilisateur modernes et ergonomiques.
+
+Les vues ont été créées dans le répertoire [Views](https://github.com/briacl/Mediatek86/tree/main/Mediatek86/Views) . Chaque vue est un fichier XAML qui définit l'interface utilisateur de l'application. Elles sont associées à un contrôleur qui lui est associé. Les contrôleurs directement associés aux vues portent le même nom que la vue mais ont l'extension `.cs`. Les contrôleurs sont responsables de la logique métier de l'application. Ils interagissent avec les classes métier pour récupérer et enregistrer les données. Ils sont également responsables de la navigation entre les vues.
+
+Le cahier des charges impose un confirmation de suppression ou de suppression pour éviter les suppressions accidentelles. Pour cela nous avons utilisé de simples MessageBox pour demander une confirmation à l'utilisateur. Par exemple pour la suppression d'un personnel :
+    
+```csharp
+Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
+            if (currentPersonnel == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un personnel à supprimer.");
+                return;
+            }
+```
+
+#### 1.9.3.4. Affichage de la liste des employés
+
+La liste des employés est affichée dans un DataGrid. Le DataGrid est un contrôle WPF qui permet d'afficher des données sous forme de tableau. Il est très flexible et permet de personnaliser l'affichage des données. Dans notre cas, nous avons utilisé un DataGrid pour afficher les employés. Chaque ligne du DataGrid correspond à un employé. Les colonnes du DataGrid correspondent aux propriétés de l'employé. Par exemple, la colonne `Nom` affiche le nom de l'employé, la colonne `Prénom` affiche le prénom de l'employé, etc.
+
