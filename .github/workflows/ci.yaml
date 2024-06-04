@@ -20,6 +20,8 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: Mediatek86
 
     - name: Build
       run: dotnet build --no-restore
+      working-directory: Mediatek86
