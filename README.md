@@ -2,10 +2,10 @@
 
 ## Description
 
-Une solution pour la médiathèque de Vienne
+Une solution pour la mÃ©diathÃ¨que de Vienne
 
 ## Architecture
 
-Cette application est écrite en C# et utilise le framework .NET 6.0.  
-Ses données sont stockées dans une base de données MySQL installée sur le poste de l'utilisateur.  
-L'accès à la base de données se fait via Entity Framework Core. L'ajout du paquet NuGet `MySql.EntityFrameworkCore` est nécessaire pour cela.
+Cette application est Ã©crite en C# et utilise le framework .NET 6.0.  
+Ses donnÃ©es sont stockÃ©es dans une base de donnÃ©es MySQL installÃ©e sur le poste de l'utilisateur.  
+L'accÃ¨s Ã  la base de donnÃ©es se fait via Entity Framework Core et la classe d'accÃ¨s BddManager.
