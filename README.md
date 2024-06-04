@@ -1,4 +1,4 @@
-# 1. Mediatek86 <!-- omit from toc -->
+# Mediatek86 <!-- omit from toc -->
 
 
 - [1. Description](#1-description)
