@@ -1,37 +1,38 @@
-# 1. Mediatek86
-- [1. Mediatek86](#1-mediatek86)
-  - [1.1. Description](#11-description)
-  - [1.2. Avertissement](#12-avertissement)
-  - [1.3. Licence](#13-licence)
-    - [1.3.1. BddManager.cs](#131-bddmanagercs)
-  - [1.4. Documentation du code source](#14-documentation-du-code-source)
-    - [1.4.1. SandCastle pour Visual Studio 2022](#141-sandcastle-pour-visual-studio-2022)
-  - [1.5. CI/CD](#15-cicd)
-  - [1.6. Architecture](#16-architecture)
-  - [1.7. Contexte de l'application](#17-contexte-de-lapplication)
-  - [1.8. Fonctionnalités](#18-fonctionnalités)
-    - [1.8.1. Contrôle d'accès à la base de données](#181-contrôle-daccès-à-la-base-de-données)
-    - [1.8.2. Contrôle d'accès à l'application](#182-contrôle-daccès-à-lapplication)
-      - [1.8.2.1. Dépannage de la connexion ou modification des paramètres de connexion](#1821-dépannage-de-la-connexion-ou-modification-des-paramètres-de-connexion)
-    - [1.8.3. Gestion du personnel](#183-gestion-du-personnel)
-  - [1.9. Processus de développement](#19-processus-de-développement)
-    - [1.9.1. Installation des outils de développement](#191-installation-des-outils-de-développement)
-    - [1.9.2. Conception de la base de données](#192-conception-de-la-base-de-données)
-      - [1.9.2.1. Génération d'un jeu de données de test](#1921-génération-dun-jeu-de-données-de-test)
-      - [1.9.2.2. Nettoyage de la base de données](#1922-nettoyage-de-la-base-de-données)
-    - [1.9.3. Développement de l'application](#193-développement-de-lapplication)
-      - [1.9.3.1. Installation des extensions Visual Studio](#1931-installation-des-extensions-visual-studio)
-      - [1.9.3.2. Création du projet](#1932-création-du-projet)
-        - [1.9.3.2.1. Installation des packages NuGet](#19321-installation-des-packages-nuget)
-      - [1.9.3.3. Contrôle du code source](#1933-contrôle-du-code-source)
-      - [1.9.3.4. Affichage de la liste des employés](#1934-affichage-de-la-liste-des-employés)
-  - [1.10. Tests](#110-tests)
+# 1. Mediatek86 <!-- omit from toc -->
 
-## 1.1. Description
+
+- [1. Description](#1-description)
+- [2. Avertissement](#2-avertissement)
+- [3. Licence](#3-licence)
+  - [3.1. BddManager.cs](#31-bddmanagercs)
+- [4. Documentation du code source](#4-documentation-du-code-source)
+  - [4.1. SandCastle pour Visual Studio 2022](#41-sandcastle-pour-visual-studio-2022)
+- [5. CI/CD](#5-cicd)
+- [6. Architecture](#6-architecture)
+- [7. Contexte de l'application](#7-contexte-de-lapplication)
+- [8. Fonctionnalités](#8-fonctionnalités)
+  - [8.1. Contrôle d'accès à la base de données](#81-contrôle-daccès-à-la-base-de-données)
+  - [8.2. Contrôle d'accès à l'application](#82-contrôle-daccès-à-lapplication)
+    - [8.2.1. Dépannage de la connexion ou modification des paramètres de connexion](#821-dépannage-de-la-connexion-ou-modification-des-paramètres-de-connexion)
+  - [8.3. Gestion du personnel](#83-gestion-du-personnel)
+- [9. Processus de développement](#9-processus-de-développement)
+  - [9.1. Installation des outils de développement](#91-installation-des-outils-de-développement)
+  - [9.2. Conception de la base de données](#92-conception-de-la-base-de-données)
+    - [9.2.1. Génération d'un jeu de données de test](#921-génération-dun-jeu-de-données-de-test)
+    - [9.2.2. Nettoyage de la base de données](#922-nettoyage-de-la-base-de-données)
+  - [9.3. Développement de l'application](#93-développement-de-lapplication)
+    - [9.3.1. Installation des extensions Visual Studio](#931-installation-des-extensions-visual-studio)
+    - [9.3.2. Création du projet](#932-création-du-projet)
+      - [9.3.2.1. Installation des packages NuGet](#9321-installation-des-packages-nuget)
+    - [9.3.3. Contrôle du code source](#933-contrôle-du-code-source)
+    - [9.3.4. Affichage de la liste des employés](#934-affichage-de-la-liste-des-employés)
+- [10. Tests](#10-tests)
+
+## 1. Description
 
 Une solution pour la médiathèque de Vienne
 
-## 1.2. Avertissement
+## 2. Avertissement
 
 Ce projet est un projet scolaire réalisé dans le cadre de la formation BTS-SIO première année.  
 Il est fourni tel quel et n'est pas destiné à être utilisé en production.  
@@ -39,39 +40,39 @@ L'application n'est pas conforme aux normes de sécurité et de qualité attendu
 Elle est diffusée ici à titre d'exemple pour illustrer les compétences acquises par l'auteur dans le cadre de sa formation.  
 L'auteur ne fournit aucune garantie quant à son fonctionnement et ne pourra être tenu pour responsable de tout dommage causé par son utilisation.
 
-## 1.3. Licence
+## 3. Licence
 
 Ce projet est sous licence MIT. 
 Cela signifie que vous pouvez l'utiliser, le modifier et le distribuer comme bon vous semble, à condition de conserver la licence MIT dans les fichiers modifiés.
 
-### 1.3.1. BddManager.cs
+### 3.1. BddManager.cs
 
 Le fichier BddManager.cs est une adaptation du code fourni par le professeur et n'est pas concerné par la licence MIT. Il reste la propriété de l'auteur original et ne doit pas être utilisé en dehors du cadre de ce projet.  
 
 
-## 1.4. Documentation du code source
+## 4. Documentation du code source
 
 Le code source est documenté en utilisant le format XMLDoc. Le compilateur C# génère automatiquement un fichier XML contenant la documentation du code source. Ce fichier est disponible dans le répertoire `bin\Debug` ou `bin\Release` après la compilation du projet.
 
-### 1.4.1. SandCastle pour Visual Studio 2022
+### 4.1. SandCastle pour Visual Studio 2022
 
 Conformément au cahier des charges, la documentation du code source est également générée avec SandCastle. 
 Le projet SandCastle est disponible dans la solution sous le nom `Documentation`. 
 Elle est déployée dans GitHub Pages à l'adresse suivante : [Documentation](https://briacl.github.io/Mediatek86/)
 
-## 1.5. CI/CD
+## 5. CI/CD
 
 Le projet est configuré pour utiliser GitHub Actions pour la CI/CD.  
 Le workflow est défini dans le fichier `.github/workflows/ci.yml`.  
 La publication de la documentation est effectuée automatiquement à chaque push sur la branche `main` via le workflow `.github/workflows/static-pages.yaml` .
 
-## 1.6. Architecture
+## 6. Architecture
 
 Cette application est écrite en C# et utilise le framework .NET 8.0 accompagné de la couche interface utilisateur Microsoft WPF.  
 Ses données sont stockées dans une base de données MySQL installée sur le poste de l'utilisateur.  
 L'accès à la base de données se fait via Entity Framework Core et la classe d'accès BddManager.
 
-## 1.7. Contexte de l'application
+## 7. Contexte de l'application
 
 Dans le cadre de la formation BTS-SIO Première année il est proposé de réaliser une application imaginaire pour la médiathèque de Vienne.  
 Voici comment est présenté le projet.  
@@ -89,11 +90,11 @@ L'application est mono-utilisateur et doit permettre de :
 - Modifier une absence
 - Supprimer une absence
 
-## 1.8. Fonctionnalités
+## 8. Fonctionnalités
 
 Une étude du cachier des charges fourni par l'entreprise nous a permis de définir les fonctionnalités suivantes :
 
-### 1.8.1. Contrôle d'accès à la base de données
+### 8.1. Contrôle d'accès à la base de données
 
 La connexion entre la base de données et l'application est sécurisée par un contrôle d'accès. Un utilisateur de la base de données doit être créé avec les droits nécessaires pour accéder à la base de données. La chaîne de connexion est stockée dans le fichier `App.config` situé dans le répertoire de l'application.  Notez que le fichier s'appelle `Mediatek86.dll.config` dans le répertoire `bin\Debug` ou `bin\Release` après la compilation du projet.
 
@@ -122,11 +123,11 @@ Voici par exemple une configuration valide pour la chaîne de connexion et les p
 </configuration>
 ```
 
-### 1.8.2. Contrôle d'accès à l'application
+### 8.2. Contrôle d'accès à l'application
 
 L'accès à l'application est sécurisé par un contrôle d'accès vérifiant les identifiants de l'utilisateur. Cette vérification est effectuée en comparant les identifiants saisis par l'utilisateur avec ceux stockés dans la base de données. Par souci de sécurité il a été convenu de ne pas stocker les mots de passe en clair dans la base de données. Les mots de passe sont donc hashés avant d'être stockés. Le hashage est effectué avec l'algorithme SHA256. Le hash est stocké sous forme de chaîne héxadécimale dans la base de données.
 
-#### 1.8.2.1. Dépannage de la connexion ou modification des paramètres de connexion
+#### 8.2.1. Dépannage de la connexion ou modification des paramètres de connexion
 
 Il n'a pas été prévu dans le cahier des charges de l'application de permettre à l'utilisateur de modifier les paramètres de connexion à l'application'. Cependant, il est possible de modifier les paramètres de connexion en modifiant le contenu de la base de données. Pour ce faire, il est nécessaire de se connecter à la base de données avec un outil tel que MySQL Workbench. Il est alors possible de modifier les paramètres de connexion dans la table `responsable` de la base de données.  
 
@@ -142,7 +143,7 @@ Voici comment modifier le mot de passe de l'utilisateur `admin` pour le remplace
 UPDATE `responsable` SET `pwd` = SHA2('newpwd', 256) WHERE `login` = 'admin';
 ```
 
-### 1.8.3. Gestion du personnel
+### 8.3. Gestion du personnel
 
 L'application permet de consulter la liste des employés, d'ajouter un employé, de modifier un employé.    
 Le fonctionnement est simple; sur la page d'accueil de l'application, la liste des employés est affichée.  
@@ -150,18 +151,18 @@ Un bouton `Ajouter` permet d'ajouter un employé.
 Après avoir sélectionné un employé dans la liste, le bouton `Modifier` permet de modifier les informations de l'employé.
 Après avoir sélectionné un employé dans la liste, le bouton `Supprimer` permet de supprimer l'employé.
 
-## 1.9. Processus de développement
+## 9. Processus de développement
 
 Le développement de l'application a été réalisé en plusieurs étapes.
 
-### 1.9.1. Installation des outils de développement
+### 9.1. Installation des outils de développement
 
 - Installation de Visual Studio 2022
   - Les options C# et .NET 8.0 sont installées
 - Installation de MariaDB 11.4.2 [depuis le site officiel](https://dlm.mariadb.com/3829198/MariaDB/mariadb-11.4.2/winx64-packages/mariadb-11.4.2-winx64.msi)
 - Installation de Looping MCD 4.0 [depuis le site officiel](https://www.looping-mcd.fr/Looping.zip)
 
-### 1.9.2. Conception de la base de données
+### 9.2. Conception de la base de données
 
 Le modèle conceptuel de données a été réalisé avec Looping MCD 4.0. 
 
@@ -179,14 +180,14 @@ GRANT ALL PRIVILEGES ON mediatek86.*
 TO 'mediatek86'@'localhost';
 ```
 
-#### 1.9.2.1. Génération d'un jeu de données de test
+#### 9.2.1. Génération d'un jeu de données de test
 
 Pour faciliter le développement de l'application, un jeu de données de test a été généré. Le jeu a été créé manuellement
 Ce jeu peut être modifié ou complété en fonction des besoins de test.  
 Il est consultable [ici](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/data/SQL/createTests.sql)  
 Nous avons décider d'utiliser des sous-requêtes pour insérer les données dans les tables `personnel` et `absence` afin de garantir l'intégrité référentielle et de permettre de passer plusieurs fois le jeu de tests sans risquer de conflits d'identifiants.
 
-#### 1.9.2.2. Nettoyage de la base de données
+#### 9.2.2. Nettoyage de la base de données
 
 Pour nettoyer la base de données et réinitialiser les données de test, il suffit d'exécuter les commande suivantes :
 
@@ -195,22 +196,22 @@ DELETE FROM `absence`;
 DELETE FROM `personnel`;
 ```
 
-### 1.9.3. Développement de l'application
+### 9.3. Développement de l'application
 
-#### 1.9.3.1. Installation des extensions Visual Studio
+#### 9.3.1. Installation des extensions Visual Studio
 
 Pour faciliter le développement, nous avons installé les extensions suivantes :
 
 - [SandCastle Help File Builder](https://github.com/EWSoftware/SHFB/releases/download/2024.2.18.0/SHFBInstaller_2024.2.18.0.zip) 2024.2.18.0
 
-#### 1.9.3.2. Création du projet
+#### 9.3.2. Création du projet
 
 Une solution vide a été créée dans Visual Studio 2022.
 Le projet a été créé avec Visual Studio 2022 en utilisant le modèle `WPF App (.NET)`.  
 Le projet a été nommé `Mediatek86` et a été enregistré dans le répertoire `C:\Users\Briacl\source\repos\Mediatek86`.  
 Un projet supplémentaire a été ajouté pour la documentation du code source. Le projet a été nommé `Documentation` et a été enregistré dans le répertoire `C:\Users\Briacl\source\repos\Mediatek86\Documentation`.
 
-##### 1.9.3.2.1. Installation des packages NuGet
+##### 9.3.2.1. Installation des packages NuGet
 
 Pour faciliter le développement, nous avons installé les packages NuGet suivants :
 
@@ -218,7 +219,7 @@ Pour faciliter le développement, nous avons installé les packages NuGet suivan
 - [MySql.Data](https://www.nuget.org/packages/MySql.Data/8.4.0) 8.4.0
 - [MySql.Data.EntityFramework](https://www.nuget.org/packages/MySql.Data.EntityFramework/8.4.0) 8.4.0
 
-#### 1.9.3.3. Contrôle du code source
+#### 9.3.3. Contrôle du code source
 
 Pour sécuriser le code source, nous avons créer un [dépôt Git](https://github.com/briacl/Mediatek86) sur GitHub. 
 Le code source est versionné et les modifications sont commentées pour faciliter la compréhension du code.
@@ -269,11 +270,11 @@ Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
             }
 ```
 
-#### 1.9.3.4. Affichage de la liste des employés
+#### 9.3.4. Affichage de la liste des employés
 
 La liste des employés est affichée dans un DataGrid. Le DataGrid est un contrôle WPF qui permet d'afficher des données sous forme de tableau. Il est très flexible et permet de personnaliser l'affichage des données. Dans notre cas, nous avons utilisé un DataGrid pour afficher les employés. Chaque ligne du DataGrid correspond à un employé. Les colonnes du DataGrid correspondent aux propriétés de l'employé. Par exemple, la colonne `Nom` affiche le nom de l'employé, la colonne `Prénom` affiche le prénom de l'employé, etc.
 
-## 1.10. Tests
+## 10. Tests
 
 Le scénario suivant permet de valider le fonctionnement de l'application : 
 Au lancement de l'application la fenêtre de connexion s'affiche.   
