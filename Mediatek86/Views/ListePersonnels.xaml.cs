@@ -109,6 +109,8 @@ namespace Mediatek86.Views
                 MessageBox.Show("Veuillez sélectionner un personnel pour gérer ses absences.");
                 return;
             }
+            ListeAbsences listeAbsences = new ListeAbsences(currentPersonnel);
+            NavigationService.Navigate(listeAbsences);
 
         }
     }
