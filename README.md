@@ -275,24 +275,44 @@ La liste des employés est affichée dans un DataGrid. Le DataGrid est un contr�
 
 ## 1.10. Tests
 
-Le scénario suivant permet de valider le fonctionnement de l'application :  
-![01-login](https://github.com/briacl/Mediatek86/assets/102411894/95a29104-4375-4b20-a81d-335b2d012d54)
+Le scénario suivant permet de valider le fonctionnement de l'application : 
+Au lancement de l'application la fenêtre de connexion s'affiche.   
+![01-login](https://github.com/briacl/Mediatek86/assets/102411894/95a29104-4375-4b20-a81d-335b2d012d54)  
+
+Volontairement on saisit un nom d'utilisateur incorrect cela est détecté par l'application.  
 ![02-login_incorrect](https://github.com/briacl/Mediatek86/assets/102411894/765e6c90-e824-49ca-bc3d-60cdce9fd737)
+
+Volontairement on saisit un mot de passe incorrect mais un utilisateur valide cela est détecté par l'application.
 ![03-utilisateur_inconnu](https://github.com/briacl/Mediatek86/assets/102411894/61d9fc0e-d0de-46fa-bbe6-d7f766efc706)
+
+On saisit un utilisateur et un mot de passe valide et on clique sur le bouton `Connexion`.  
+La liste des employés s'affiche.  
 ![05-liste_personnels](https://github.com/briacl/Mediatek86/assets/102411894/b86c1249-44e3-4bb2-b5ce-882895a23abb)
-![06-Capture d’écran 2024-06-04 185459](https://github.com/briacl/Mediatek86/assets/102411894/a6796c6d-131b-41fc-88bb-d6320c975524)
+
+On clique sur le bouton `Ajouter` pour ajouter un employé. La fenêtre d'ajout d'un employé s'affiche. On saisit les informations de l'employé et on clique sur le bouton `Ajouter`.   
 ![08-ajout_personnel](https://github.com/briacl/Mediatek86/assets/102411894/52d7b956-972e-4142-ad82-6c50fbba897e)
+
+On véricie que l'employé a bien été ajouté en consultant la liste des employés. Ensuite on clique sur le bouton `Modifier` pour modifier les informations de l'employé. On modifie les informations de l'employé et on clique sur le bouton `Enregistrer`.  
+
 ![09-personnel_ajoute](https://github.com/briacl/Mediatek86/assets/102411894/c48553d0-b9a7-49c6-ba94-0d3bd9cdfc07)
-![10-confirmation_modification](https://github.com/briacl/Mediatek86/assets/102411894/e85f8f16-99ac-4b54-9f6a-a90a6f31e5be)
+
+Conformément au cahier des charges, un message de confirmation s'affiche pour confirmer la modification de l'employé.  
+
 ![11-modification_personnel](https://github.com/briacl/Mediatek86/assets/102411894/3908ca70-8b66-490a-87d0-2b75d60152af)
+![10-confirmation_modification](https://github.com/briacl/Mediatek86/assets/102411894/e85f8f16-99ac-4b54-9f6a-a90a6f31e5be).  
+
 ![12-modification_enregistree](https://github.com/briacl/Mediatek86/assets/102411894/cbfd8c0c-cc3f-428d-a787-35c1bc3d0b9f)
+
+Après confirmation on vérifie que les modifications ont bien été enregistrées en consultant la liste des employés.  
+
 ![13-validation_modification](https://github.com/briacl/Mediatek86/assets/102411894/68e68c93-e713-4aef-a1ae-c25877564f01)
+
+On clique sur le bouton `Supprimer` pour supprimer un employé. Un message de confirmation s'affiche pour confirmer la suppression de l'employé. Conformément au cahier des charges, un message de confirmation s'affiche pour confirmer la suppression de l'employé.  
 ![14-confirmation_suppression](https://github.com/briacl/Mediatek86/assets/102411894/29738d83-0183-4b54-a7b4-eb56cbef3e0e)
 
+Après confirmation on vérifie que l'employé a bien été supprimé en consultant la liste des employés.
 
-
-
-
+![06-Capture d’écran 2024-06-04 185459](https://github.com/briacl/Mediatek86/assets/102411894/a6796c6d-131b-41fc-88bb-d6320c975524)
 
 
 
