@@ -3,6 +3,9 @@ using MySql.Data.EntityFramework;
 using System.Data.Entity;
 namespace Mediatek86.data
 {
+    /// <summary>
+    /// Classe Entity Framework pour la base de données Mediatek86.
+    /// </summary>
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class MyDbContext : DbContext
     {
