@@ -69,7 +69,20 @@ Le code source est documenté en utilisant le format XMLDoc. Le compilateur C# g
 
 Conformément au cahier des charges, la documentation du code source est également générée avec SandCastle. 
 Le projet SandCastle est disponible dans la solution sous le nom `Documentation`. 
-Elle est déployée dans GitHub Pages à l'adresse suivante : [Documentation](https://briacl.github.io/Mediatek86/)
+Elle est déployée dans GitHub Pages à l'adresse suivante : [Documentation](https://briacl.github.io/Mediatek86/)  
+Cela permet une consultation en ligne interactive et élégante de la documentation du code source.  
+
+Accueil de la documentation:
+
+![SandCastle]()
+
+Vue type d'une classe:
+
+![SandCastle]()
+
+Vue type d'une méthode:
+
+![SandCastle]()
 
 ## 5. CI/CD
 
