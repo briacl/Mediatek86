@@ -153,7 +153,7 @@ Après avoir sélectionné un employé dans la liste, le bouton `Supprimer` perm
 
 ## 9. Processus de développement
 
-Le développement de l'application a été réalisé en plusieurs étapes.
+Le développement de l'application a été réalisé en plusieurs étapes. Qui on toutes été saisie dans un projet GitHub. Le projet est disponible à l'adresse suivante : [Mediatek86](https://github.com/users/briacl/projects/1)
 
 ### 9.1. Installation des outils de développement
 

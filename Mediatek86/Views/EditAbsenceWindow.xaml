@@ -22,6 +22,6 @@
         <Label Content="Motif" Grid.Row="4"/>
         <ComboBox x:Name="MotifComboBox" DisplayMemberPath="Libelle" Grid.Row="5"/>
 
-        <Button Content="Modifier" Click="ModifierButton_Click" Grid.Row="6" Margin="5,5,5,5"/>
+        <Button Content="Modifier" Click="ModifierButton_Click" Grid.Row="6" Margin="5,5,5,5" VerticalAlignment="Center"/>
     </Grid>
 </Window>

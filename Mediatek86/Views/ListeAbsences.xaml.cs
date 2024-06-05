@@ -27,16 +27,22 @@ namespace Mediatek86.Views
 
         /// <summary>
         /// Handler pour le bouton d'ajout d'une absence.
+        /// Ouvre la fenêtre d'ajout d'une absence.
+        /// Met à jour la liste des absences après ajout.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAjouterAbsence_Click(object sender, RoutedEventArgs e)
         {
+            AddAbsenceWindow addAbsenceWindow = new AddAbsenceWindow(personnel);
+            addAbsenceWindow.ShowDialog();
             populateListAbsence(personnel);
         }
 
         /// <summary>
         /// Handler pour le bouton de modification d'une absence.
+        /// Ouvre la fenêtre de modification d'une absence.
+        /// Met à jour la liste des absences après modification.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -54,6 +60,8 @@ namespace Mediatek86.Views
 
         /// <summary>
         /// Handler pour le bouton de suppression d'une absence.
+        /// Demande confirmation à l'utilisateur avant de supprimer l'absence.
+        /// Met à jour la liste des absences après suppression.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

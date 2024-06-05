@@ -52,8 +52,16 @@ namespace Mediatek86.Views
                 MessageBox.Show("La date de début doit être antérieure à la date de fin.");
                 return;
             }
+
+            if (absence.DateDebut != DateDebutPicker.SelectedDate.Value)
+            {
+                // TODO: La date de début ne peut pas (encore) être modifiée
+                MessageBox.Show("La date de début ne peut pas être modifiée. Veuillez supprimer cette absence et créer une nouvelle.");
+                return;
+            }
+
             // Mettre à jour l'absence avec les nouvelles données
-            absence.DateDebut = DateDebutPicker.SelectedDate.Value;
+            // absence.DateDebut = DateDebutPicker.SelectedDate.Value;
             absence.DateFin = DateFinPicker.SelectedDate.Value;
             absence.Motif = (Motif)MotifComboBox.SelectedItem;
 
@@ -77,26 +85,25 @@ namespace Mediatek86.Views
         private List<Motif>? GetMotifs()
         {
             using (var db = new MyDbContext())
-                {
+            {
                 return db.Motif?.ToList();
-                }
+            }
         }
 
         /// <summary>
         /// Méthode pour mettre à jour une absence dans la base de données.
         /// <see cref="DbContext.SaveChanges"/>
         /// </summary>
-        /// <param name="absence">L'absence mise à jour</param>
+        /// <param name="absence">L'absence à mettre à jour</param>
         private void UpdateAbsence(Absence absence)
         {
-            absence.DateDebut = DateDebutPicker.SelectedDate.Value;
-            absence.DateFin = DateFinPicker.SelectedDate.Value;
-            absence.IdMotif = ((Motif)MotifComboBox.SelectedItem).IdMotif;
+
             // On met à jour l'absence' dans la base de données
             using (var db = new MyDbContext())
             {
                 // On récupére le Motif de la base de données
                 // cela doit être le Motif correspondant à l'IdMotif de absence
+                absence.IdMotif = ((Motif)MotifComboBox.SelectedItem).IdMotif;
                 Motif? motif = db.Motif?.Find(absence.IdMotif);
                 // Assignez ce Motif à absence.Motif
                 absence.Motif = motif;
