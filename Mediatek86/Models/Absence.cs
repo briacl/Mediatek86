@@ -83,5 +83,45 @@ namespace Mediatek86.Models
             }
             return bChevauche;
         }
+
+        /// <summary>
+        /// Surcharge de Chevauche permettant de spécifier les dates de début et de fin de l'absence à tester.
+        /// </summary>
+        /// <param name="dateDebut">Date de début de l'absence à tester</param>
+        /// <param name="dateFin">Date de fin de l'absence à tester</param>
+        public bool Chevauche(Personnel personnel, DateTime dateDebut, DateTime dateFin)
+        {
+            bool bChevauche = false;
+
+
+            // On recherche dans les absences de ce personnel si il existe une absence qui chevauche l'absence passée en paramètre
+            if (personnel == null)
+            {
+                return true;
+            }
+            else
+            {
+                List<Absence>? absences = personnel.Absences?.ToList();
+                if (absences == null)
+                {
+                    return false;
+                }
+                absences.ForEach(_absence => {
+                    if (_absence.DateDebut >= dateDebut && _absence.DateDebut <= dateFin)
+                    {
+                        bChevauche = true;
+                    }
+                    if (_absence.DateFin >= dateDebut && _absence.DateFin <= dateFin)
+                    {
+                        bChevauche = true;
+                    }
+                    if (_absence.DateDebut <= dateDebut && _absence.DateFin >= dateFin)
+                    {
+                        bChevauche = true;
+                    }
+                });
+            }
+            return bChevauche;
+        }
     }
 }

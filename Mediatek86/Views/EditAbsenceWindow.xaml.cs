@@ -53,19 +53,6 @@ namespace Mediatek86.Views
                 return;
             }
 
-            // On vérifie que l'absence ne chevauche pas une autre absence
-            Absence tempAbsence = new Absence
-            {
-                DateDebut = DateDebutPicker.SelectedDate.Value,
-                DateFin = DateFinPicker.SelectedDate.Value,
-                IdMotif = ((Motif)MotifComboBox.SelectedItem).IdMotif,
-                IdPersonnel = absence.IdPersonnel
-            };
-            if (tempAbsence.Chevauche(absence.Personnel))
-            {
-                MessageBox.Show("L'absence chevauche une autre absence.");
-                return;
-            }
             if (absence.DateDebut != DateDebutPicker.SelectedDate.Value)
             {
                 // TODO: La date de début ne peut pas (encore) être modifiée
@@ -73,6 +60,12 @@ namespace Mediatek86.Views
                 return;
             }
 
+            // Seulement si la date de fin est modifiée on vérifie le chevauchement
+            if (absence.DateFin != DateFinPicker.SelectedDate.Value)
+            {
+                Chevauchement();
+                return;
+            }
             // Mettre à jour l'absence avec les nouvelles données
             // absence.DateDebut = DateDebutPicker.SelectedDate.Value;
             absence.DateFin = DateFinPicker.SelectedDate.Value;
@@ -104,6 +97,30 @@ namespace Mediatek86.Views
         }
 
         /// <summary>
+        /// Gestion du chevauchement des absences.
+        /// </summary>
+        private void Chevauchement()
+        {
+            // On vérifie que l'absence ne chevauche pas une autre absence
+            using (var db = new MyDbContext())
+            {
+                var personnel = db.Personnel.FirstOrDefault(p => p.IdPersonnel == absence.IdPersonnel);
+                db.Entry(personnel).Collection(p => p.Absences).Load();
+                Absence tempAbsence = new Absence
+                {
+                    DateDebut = DateDebutPicker.SelectedDate.Value,
+                    DateFin = DateFinPicker.SelectedDate.Value,
+                    IdMotif = ((Motif)MotifComboBox.SelectedItem).IdMotif,
+                    IdPersonnel = absence.IdPersonnel
+                };
+                if (absence.Chevauche(personnel, tempAbsence.DateDebut, tempAbsence.DateFin))
+                {
+                    MessageBox.Show("L'absence chevauche une autre absence.");
+                    return;
+                }
+            }
+        }
+        /// <summary>
         /// Méthode pour mettre à jour une absence dans la base de données.
         /// <see cref="DbContext.SaveChanges"/>
         /// </summary>
@@ -114,6 +131,7 @@ namespace Mediatek86.Views
             // On met à jour l'absence' dans la base de données
             using (var db = new MyDbContext())
             {
+
                 // On récupére le Motif de la base de données
                 // cela doit être le Motif correspondant à l'IdMotif de absence
                 absence.IdMotif = ((Motif)MotifComboBox.SelectedItem).IdMotif;
