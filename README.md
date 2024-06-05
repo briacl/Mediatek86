@@ -141,7 +141,7 @@ L'accès à la base de données se fait via Entity Framework Core et la classe d
 Dans le cadre de la formation BTS-SIO Première année il est proposé de réaliser une application imaginaire pour la médiathèque de Vienne.  
 Voici comment est présenté le projet.  
 
-Nous avons été intégré dans l'entreprise `ESN InfoTech Services 86` en tant que développeur junior. L'entreprise nous a alors confié  la réalisation d'une application Windows pour la médiathèque de Vienne.  
+Nous avons été intégré dans l'entreprise `ESN InfoTech Services 86` en tant que développeur junior. L'entreprise nous a alors confié la réalisation d'une application Windows pour la médiathèque de Vienne.  
 
 Cette application doit permettre de gérer les absences du personnel dans une médiathèque.  
 
@@ -160,7 +160,7 @@ Une étude du cachier des charges fourni par l'entreprise nous a permis de défi
 
 ### 11.1. Contrôle d'accès à la base de données
 
-La connexion entre la base de données et l'application est sécurisée par un contrôle d'accès. Un utilisateur de la base de données doit être créé avec les droits nécessaires pour accéder à la base de données. La chaîne de connexion est stockée dans le fichier `App.config` situé dans le répertoire de l'application.  Notez que le fichier s'appelle `Mediatek86.dll.config` dans le répertoire `bin\Debug` ou `bin\Release` après la compilation du projet.
+La connexion entre la base de données et l'application est sécurisée par un contrôle d'accès. Un utilisateur de la base de données doit être créé avec les droits nécessaires pour accéder à la base de données. La chaîne de connexion est stockée dans le fichier `App.config` situé dans le répertoire de l'application. Notez que le fichier s'appelle `Mediatek86.dll.config` dans le répertoire `bin\Debug` ou `bin\Release` après la compilation du projet.
 
 Voici par exemple une configuration valide pour la chaîne de connexion et les paramètres de runtime:
 
@@ -233,7 +233,7 @@ Le modèle conceptuel de données a été réalisé avec Looping MCD 4.0.
 
 ![mcd](https://github.com/briacl/Mediatek86/assets/102411894/e4a4c7c7-69c5-4664-a5f3-aad87b12d52b)
 
-La table `responsable` a été créée dans Looping puis [le script de création des tables](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/data/SQL/createDatabase.sql) a été généré et a été complété pour créer la base de données appelée `mediatek86` et peupler les tables `motif` et `service` dans le même script. 
+La table `responsable` a été créée dans Looping puis [le script de création des tables](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/data/SQL/createDatabase.sql) a été généré et complété pour créer la base de données appelée `mediatek86` et peupler les tables `motif` et `service` dans le même script. 
 
 Pour créer la base de données, il suffit de copier le contenu du script dans un éditeur de requêtes SQL tel que MySQL Workbench et de l'exécuter. 
 
@@ -286,7 +286,7 @@ Pour faciliter le développement, nous avons installé les packages NuGet suivan
 
 #### 12.3.3. Contrôle du code source
 
-Pour sécuriser le code source, nous avons créer un [dépôt Git](https://github.com/briacl/Mediatek86) sur GitHub. 
+Pour sécuriser le code source, nous avons créé un [dépôt Git](https://github.com/briacl/Mediatek86) sur GitHub. 
 Le code source est versionné et les modifications sont commentées pour faciliter la compréhension du code.
 Pour se conformer aux standards de GitHub, nous avons ajouté un fichier `README.md` à la racine du dépôt. Ce fichier contient une description du projet, une licence, une documentation du code source et des informations sur le processus de développement. Ce fichier est écrit en Markdown pour faciliter la lecture sur le site GitHub. Une version PDF est également disponible pour une lecture hors ligne.  
 
@@ -324,7 +324,7 @@ Les vues de l'application ont été créées en utilisant le designer de Visual 
 
 Les vues ont été créées dans le répertoire [Views](https://github.com/briacl/Mediatek86/tree/main/Mediatek86/Views) . Chaque vue est un fichier XAML qui définit l'interface utilisateur de l'application. Elles sont associées à un contrôleur qui lui est associé. Les contrôleurs directement associés aux vues portent le même nom que la vue mais ont l'extension `.cs`. Les contrôleurs sont responsables de la logique métier de l'application. Ils interagissent avec les classes métier pour récupérer et enregistrer les données. Ils sont également responsables de la navigation entre les vues.
 
-Le cahier des charges impose un confirmation de suppression ou de suppression pour éviter les suppressions accidentelles. Pour cela nous avons utilisé de simples MessageBox pour demander une confirmation à l'utilisateur. Par exemple pour la suppression d'un personnel :
+Le cahier des charges impose une confirmation ou non de suppression pour éviter les suppressions accidentelles. Pour cela nous avons utilisé de simples MessageBox pour demander une confirmation à l'utilisateur. Par exemple pour la suppression d'un personnel :
     
 ```csharp
 Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
@@ -375,7 +375,7 @@ La liste des employés s'affiche.
   
 ![08-ajout_personnel](https://github.com/briacl/Mediatek86/assets/102411894/52d7b956-972e-4142-ad82-6c50fbba897e)
 
-On véricie que l'employé a bien été ajouté en consultant la liste des employés. 
+On vérifie que l'employé a bien été ajouté en consultant la liste des employés. 
 
 #### 13.2.2. Modifier un employé
 
