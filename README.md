@@ -26,7 +26,18 @@
       - [9.3.2.1. Installation des packages NuGet](#9321-installation-des-packages-nuget)
     - [9.3.3. Contrôle du code source](#933-contrôle-du-code-source)
     - [9.3.4. Affichage de la liste des employés](#934-affichage-de-la-liste-des-employés)
+    - [9.3.5. Affichage de la liste des absences](#935-affichage-de-la-liste-des-absences)
+    - [9.3.6. Gestion de la saisie des dates dans les formulaires](#936-gestion-de-la-saisie-des-dates-dans-les-formulaires)
 - [10. Tests](#10-tests)
+  - [10.1. Scénario de test de l'authentification](#101-scénario-de-test-de-lauthentification)
+  - [10.2. Scénario de test de la gestion du personnel](#102-scénario-de-test-de-la-gestion-du-personnel)
+    - [10.2.1. Ajouter un employé](#1021-ajouter-un-employé)
+    - [10.2.2. Modifier un employé](#1022-modifier-un-employé)
+    - [10.2.3. Supprimer un employé](#1023-supprimer-un-employé)
+  - [10.3. Scénario de test de la gestion des absences](#103-scénario-de-test-de-la-gestion-des-absences)
+    - [10.3.1. Ajouter une absence](#1031-ajouter-une-absence)
+    - [10.3.2. Modifier une absence](#1032-modifier-une-absence)
+    - [10.3.3. Supprimer une absence](#1033-supprimer-une-absence)
 
 ## 1. Description
 
@@ -274,7 +285,19 @@ Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
 
 La liste des employés est affichée dans un DataGrid. Le DataGrid est un contrôle WPF qui permet d'afficher des données sous forme de tableau. Il est très flexible et permet de personnaliser l'affichage des données. Dans notre cas, nous avons utilisé un DataGrid pour afficher les employés. Chaque ligne du DataGrid correspond à un employé. Les colonnes du DataGrid correspondent aux propriétés de l'employé. Par exemple, la colonne `Nom` affiche le nom de l'employé, la colonne `Prénom` affiche le prénom de l'employé, etc.
 
+#### 9.3.5. Affichage de la liste des absences
+
+La liste des absences est affichée dans un DataGrid de la même manière que la liste des employés. Chaque ligne du DataGrid correspond à une absence. Les colonnes du DataGrid correspondent aux propriétés de l'absence. Par exemple, la colonne `Date` affiche la date de l'absence, la colonne `Motif` affiche le motif de l'absence, etc.
+
+#### 9.3.6. Gestion de la saisie des dates dans les formulaires
+
+Pour faciliter la saisie des dates dans les formulaires, nous avons utilisé un contrôle DatePicker. Le DatePicker est un contrôle WPF qui permet de sélectionner une date dans un calendrier. Il est très pratique pour les formulaires de saisie de dates. Dans notre cas, nous avons utilisé un DatePicker pour saisir la date de début et la date de fin d'une absence. L'utilisateur peut sélectionner une date en cliquant sur le calendrier et en choisissant une date dans le calendrier. La date sélectionnée est automatiquement mise à jour dans le champ de saisie de la date.
+
+Copie d'écran ici : ![Capture d’écran 2024-06-04 185459]()
+
 ## 10. Tests
+
+### 10.1. Scénario de test de l'authentification
 
 Le scénario suivant permet de valider le fonctionnement de l'application : 
 Au lancement de l'application la fenêtre de connexion s'affiche.   
@@ -290,10 +313,19 @@ On saisit un utilisateur et un mot de passe valide et on clique sur le bouton `C
 La liste des employés s'affiche.  
 ![05-liste_personnels](https://github.com/briacl/Mediatek86/assets/102411894/b86c1249-44e3-4bb2-b5ce-882895a23abb)
 
-On clique sur le bouton `Ajouter` pour ajouter un employé. La fenêtre d'ajout d'un employé s'affiche. On saisit les informations de l'employé et on clique sur le bouton `Ajouter`.   
+### 10.2. Scénario de test de la gestion du personnel
+
+#### 10.2.1. Ajouter un employé
+
+À partir de la liste des employés, on clique sur le bouton `Ajouter` pour ajouter un employé. La fenêtre d'ajout d'un employé s'affiche. On saisit les informations de l'employé et on clique sur le bouton `Ajouter`.
+  
 ![08-ajout_personnel](https://github.com/briacl/Mediatek86/assets/102411894/52d7b956-972e-4142-ad82-6c50fbba897e)
 
-On véricie que l'employé a bien été ajouté en consultant la liste des employés. Ensuite on clique sur le bouton `Modifier` pour modifier les informations de l'employé. On modifie les informations de l'employé et on clique sur le bouton `Enregistrer`.  
+On véricie que l'employé a bien été ajouté en consultant la liste des employés. 
+
+#### 10.2.2. Modifier un employé
+
+Ensuite on clique sur le bouton `Modifier` pour modifier les informations de l'employé. On modifie les informations de l'employé et on clique sur le bouton `Enregistrer`.  
 
 ![09-personnel_ajoute](https://github.com/briacl/Mediatek86/assets/102411894/c48553d0-b9a7-49c6-ba94-0d3bd9cdfc07)
 
@@ -308,22 +340,60 @@ Après confirmation on vérifie que les modifications ont bien été enregistré
 
 ![13-validation_modification](https://github.com/briacl/Mediatek86/assets/102411894/68e68c93-e713-4aef-a1ae-c25877564f01)
 
+#### 10.2.3. Supprimer un employé
+
+À partir de la liste des employés, on sélectionne un employé.  
 On clique sur le bouton `Supprimer` pour supprimer un employé. Un message de confirmation s'affiche pour confirmer la suppression de l'employé. Conformément au cahier des charges, un message de confirmation s'affiche pour confirmer la suppression de l'employé.  
 ![14-confirmation_suppression](https://github.com/briacl/Mediatek86/assets/102411894/29738d83-0183-4b54-a7b4-eb56cbef3e0e)
 
 Après confirmation on vérifie que l'employé a bien été supprimé en consultant la liste des employés.  
-![22-ajouter_absence_vérification](https://github.com/briacl/Mediatek86/assets/102411894/25124a50-4c1a-47c4-bbba-bd0cf0df5854)
-![21-ajouter_absence_confirmation](https://github.com/briacl/Mediatek86/assets/102411894/ea0ef504-1a2f-4d59-8ff5-80fdd0fafdd9)
-![20-ajouter_absence](https://github.com/briacl/Mediatek86/assets/102411894/c8211447-c47c-46de-80cc-7810c57aef9e)
-![19-modifier_absence_effectuee](https://github.com/briacl/Mediatek86/assets/102411894/86d7818a-62ab-4259-b523-cba79e24ba0b)
-![18-modifier_absence_confirmation](https://github.com/briacl/Mediatek86/assets/102411894/a97ccf01-6e0e-46a3-85b3-fca57471455b)
-![17-modifier_absence](https://github.com/briacl/Mediatek86/assets/102411894/539f5f12-2f74-4e3c-9ddc-67628ced56b1)
-![16-liste_absences_defaut_selection](https://github.com/briacl/Mediatek86/assets/102411894/4d5c7303-4667-4325-a8e3-460c1f9a37c7)
-![15-liste_absences](https://github.com/briacl/Mediatek86/assets/102411894/c0728719-f8f0-4f8c-93e0-282cee0cc5c3)
-![23-supprimer_absence_confirmation](https://github.com/briacl/Mediatek86/assets/102411894/17fd0df2-03d4-4a9f-8a6d-3663b55c855f)
-
 
 ![06-Capture d’écran 2024-06-04 185459](https://github.com/briacl/Mediatek86/assets/102411894/a6796c6d-131b-41fc-88bb-d6320c975524)
 
 
+### 10.3. Scénario de test de la gestion des absences
 
+#### 10.3.1. Ajouter une absence
+
+À partir de la liste des employés, on sélectionne un employé, on clique sur le bouton `Absences` pour consulter la liste des absences. La liste des absences s'affiche.  
+
+![15-liste_absences](https://github.com/briacl/Mediatek86/assets/102411894/c0728719-f8f0-4f8c-93e0-282cee0cc5c3)
+
+On clique sur le bouton `Ajouter` pour ajouter une absence. La fenêtre d'ajout d'une absence s'affiche.
+
+![20-ajouter_absence](https://github.com/briacl/Mediatek86/assets/102411894/c8211447-c47c-46de-80cc-7810c57aef9e)
+
+On saisit les informations de l'absence et on clique sur le bouton `Ajouter`.
+
+![21-ajouter_absence_confirmation](https://github.com/briacl/Mediatek86/assets/102411894/ea0ef504-1a2f-4d59-8ff5-80fdd0fafdd9)
+
+On contrôle alors que l'absence a bien été ajoutée en consultant la liste des absences.
+
+![22-ajouter_absence_vérification](https://github.com/briacl/Mediatek86/assets/102411894/25124a50-4c1a-47c4-bbba-bd0cf0df5854)
+
+
+#### 10.3.2. Modifier une absence
+
+Sans sélectionner une absence, on clique sur le bouton `Modifier`. Un message d'erreur s'affiche pour indiquer qu'aucune absence n'a été sélectionnée. 
+
+![16-liste_absences_defaut_selection](https://github.com/briacl/Mediatek86/assets/102411894/4d5c7303-4667-4325-a8e3-460c1f9a37c7)
+
+On sélectionne une absence dans la liste des absences et on clique sur le bouton `Modifier`. La fenêtre de modification d'une absence s'affiche. On modifie les informations de l'absence et on clique sur le bouton `Modifier`.
+
+![17-modifier_absence](https://github.com/briacl/Mediatek86/assets/102411894/539f5f12-2f74-4e3c-9ddc-67628ced56b1)
+
+Une demande de confirmation s'affiche pour confirmer la modification de l'absence.
+
+![18-modifier_absence_confirmation](https://github.com/briacl/Mediatek86/assets/102411894/a97ccf01-6e0e-46a3-85b3-fca57471455b)
+
+Une fois la modification effectuée, un message de confirmation s'affiche pour indiquer que la modification a bien été enregistrée.
+
+![19-modifier_absence_effectuee](https://github.com/briacl/Mediatek86/assets/102411894/86d7818a-62ab-4259-b523-cba79e24ba0b)
+
+#### 10.3.3. Supprimer une absence
+
+On sélectionne une absence dans la liste des absences et on clique sur le bouton `Supprimer`. Une demande de confirmation s'affiche pour confirmer la suppression de l'absence.
+
+![23-supprimer_absence_confirmation](https://github.com/briacl/Mediatek86/assets/102411894/17fd0df2-03d4-4a9f-8a6d-3663b55c855f)
+
+On vérifie que l'absence a bien été supprimée en consultant la liste des absences.
