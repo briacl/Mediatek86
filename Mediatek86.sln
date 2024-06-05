@@ -10,6 +10,8 @@ Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Documentation", "Documentat
 		{992A2ED3-7AAF-4F30-AE54-ADEA65BD9020} = {992A2ED3-7AAF-4F30-AE54-ADEA65BD9020}
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installation", "Installation\Installation.vdproj", "{1777E693-9FB9-40D8-B264-4EB06048ADA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,8 @@ Global
 		{816F991A-498B-4AAF-83CD-7A207988C26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{816F991A-498B-4AAF-83CD-7A207988C26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{816F991A-498B-4AAF-83CD-7A207988C26F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1777E693-9FB9-40D8-B264-4EB06048ADA5}.Debug|Any CPU.ActiveCfg = Debug
+		{1777E693-9FB9-40D8-B264-4EB06048ADA5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
