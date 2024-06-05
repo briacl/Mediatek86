@@ -74,15 +74,15 @@ Cela permet une consultation en ligne interactive et élégante de la documentat
 
 Accueil de la documentation:
 
-![SandCastle]()
+![50-Sandcastle_accueil](https://github.com/briacl/Mediatek86/assets/102411894/88222170-3f73-4051-b0f5-bead11dcec51)
 
 Vue type d'une classe:
 
-![SandCastle]()
+![50-Sandcastle_vue_classe](https://github.com/briacl/Mediatek86/assets/102411894/c0bdf834-0a6c-4e94-93f4-fd83b57eade1)
 
 Vue type d'une méthode:
 
-![SandCastle]()
+![50-Sandcastle_vue_méthode](https://github.com/briacl/Mediatek86/assets/102411894/64a59555-e347-4188-b7d2-7550370efb34)
 
 ## 5. CI/CD
 
