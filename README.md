@@ -293,7 +293,7 @@ La liste des absences est affichée dans un DataGrid de la même manière que la
 
 Pour faciliter la saisie des dates dans les formulaires, nous avons utilisé un contrôle DatePicker. Le DatePicker est un contrôle WPF qui permet de sélectionner une date dans un calendrier. Il est très pratique pour les formulaires de saisie de dates. Dans notre cas, nous avons utilisé un DatePicker pour saisir la date de début et la date de fin d'une absence. L'utilisateur peut sélectionner une date en cliquant sur le calendrier et en choisissant une date dans le calendrier. La date sélectionnée est automatiquement mise à jour dans le champ de saisie de la date.
 
-Copie d'écran ici : ![Capture d’écran 2024-06-04 185459]()
+![DatePicker](https://github.com/briacl/Mediatek86/assets/102411894/7b93c849-b422-48cf-a4bd-c011c0d60ce6)
 
 ## 10. Tests
 
