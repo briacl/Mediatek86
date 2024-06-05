@@ -82,6 +82,11 @@ namespace Mediatek86.Views
                 }
         }
 
+        /// <summary>
+        /// Méthode pour mettre à jour une absence dans la base de données.
+        /// <see cref="DbContext.SaveChanges"/>
+        /// </summary>
+        /// <param name="absence">L'absence mise à jour</param>
         private void UpdateAbsence(Absence absence)
         {
             absence.DateDebut = DateDebutPicker.SelectedDate.Value;

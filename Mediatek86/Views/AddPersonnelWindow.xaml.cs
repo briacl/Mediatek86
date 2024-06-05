@@ -24,6 +24,7 @@ namespace Mediatek86.Views
         /// <summary>
         /// Ajout d'un personnel après confirmation par l'utilisateur
         /// la fonction vérifie que tous les champs sont remplis
+        /// <see cref="System.Data.Entity.DbContext.SaveChanges"/>
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
