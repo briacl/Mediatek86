@@ -407,7 +407,8 @@ Pour éviter les chevauchements de dates, nous avons ajouté une vérification d
 
 On teste cette fonctionnalité en ajoutant une absence qui chevauche une autre absence pour le même employé. Un message d'erreur s'affiche pour indiquer que l'absence ne peut pas être ajoutée.
 
-![23-ajouter_absence_chevauchement]()
+![24-absence_chevauchement](https://github.com/briacl/Mediatek86/assets/102411894/aa1d4182-b739-47af-9a33-0960a67c03c0)
+
 
 #### 10.3.2. Modifier une absence
 
