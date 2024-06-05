@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS `mediatek86` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+ï»¿CREATE DATABASE IF NOT EXISTS `mediatek86` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `mediatek86`;
 CREATE TABLE service(
    idservice INT AUTO_INCREMENT,
@@ -38,16 +38,16 @@ CREATE TABLE responsable(
     pwd VARCHAR(64)
  );
 
--- Insertion des données du responsable
+-- Insertion des donnÃ©es du responsable
 INSERT INTO `responsable` (`login`, `pwd`) VALUES ('admin',  SHA2('admin', 256));
 
--- Insertion des motifs  vacances, maladie, motif familial, congé parental dans motif
+-- Insertion des motifs  vacances, maladie, motif familial, congÃ© parental dans motif
 INSERT INTO `motif` (`libelle`) VALUES ('vacances');
 INSERT INTO `motif` (`libelle`) VALUES ('maladie');
 INSERT INTO `motif` (`libelle`) VALUES ('motif familial');
-INSERT INTO `motif` (`libelle`) VALUES ('congé parental');
+INSERT INTO `motif` (`libelle`) VALUES ('congÃ© parental');
 
--- Insertion des services administratif, médiation culturelle, prêt
+-- Insertion des services administratif, mÃ©diation culturelle, prÃªt
 INSERT INTO `service` (`nom`) VALUES ('administratif');
-INSERT INTO `service` (`nom`) VALUES ('médiation culturelle');
-INSERT INTO `service` (`nom`) VALUES ('prêt');
+INSERT INTO `service` (`nom`) VALUES ('mÃ©diation culturelle');
+INSERT INTO `service` (`nom`) VALUES ('prÃªt');

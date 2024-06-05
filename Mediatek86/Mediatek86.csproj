@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Controlers\" />
-    <Folder Include="data\SQL\" />
   </ItemGroup>
 
   <ItemGroup>
