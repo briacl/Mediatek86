@@ -98,7 +98,7 @@ Pour comprendre comment utiliser l'application nous avons réalisé une courte v
 
 ## 6. Notice d'utilisation
 
-L'application est simple d'utilisation toutefois une documentation est disponible sous la forme d'un wiki disponible à cette adresse. [Documentation](https://github.com/briacl/Mediatek86/wiki/Mediatek86)
+L'application est simple d'utilisation toutefois une documentation est disponible sous la forme d'un wiki disponible à cette adresse. [Wiki](https://github.com/briacl/Mediatek86/wiki)
 
 ## 7. Documentation du code source
 
