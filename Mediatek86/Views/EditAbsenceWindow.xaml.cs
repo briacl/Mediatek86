@@ -53,6 +53,19 @@ namespace Mediatek86.Views
                 return;
             }
 
+            // On vérifie que l'absence ne chevauche pas une autre absence
+            Absence tempAbsence = new Absence
+            {
+                DateDebut = DateDebutPicker.SelectedDate.Value,
+                DateFin = DateFinPicker.SelectedDate.Value,
+                IdMotif = ((Motif)MotifComboBox.SelectedItem).IdMotif,
+                IdPersonnel = absence.IdPersonnel
+            };
+            if (tempAbsence.Chevauche(absence.Personnel))
+            {
+                MessageBox.Show("L'absence chevauche une autre absence.");
+                return;
+            }
             if (absence.DateDebut != DateDebutPicker.SelectedDate.Value)
             {
                 // TODO: La date de début ne peut pas (encore) être modifiée

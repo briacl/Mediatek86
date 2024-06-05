@@ -1,5 +1,12 @@
 # Mediatek86 <!-- omit from toc -->
 
+Une solution pour la médiathèque de Vienne…  
+Ceci est un projet scolaire réalisé dans le cadre de la formation BTS-SIO première année.  
+
+Briac LE MEILLAT  
+<div class="page"/>
+
+## Table des matières <!-- omit from toc -->
 
 - [1. Description](#1-description)
 - [2. Avertissement](#2-avertissement)
@@ -25,9 +32,13 @@
     - [9.3.2. Création du projet](#932-création-du-projet)
       - [9.3.2.1. Installation des packages NuGet](#9321-installation-des-packages-nuget)
     - [9.3.3. Contrôle du code source](#933-contrôle-du-code-source)
-    - [9.3.4. Affichage de la liste des employés](#934-affichage-de-la-liste-des-employés)
-    - [9.3.5. Affichage de la liste des absences](#935-affichage-de-la-liste-des-absences)
-    - [9.3.6. Gestion de la saisie des dates dans les formulaires](#936-gestion-de-la-saisie-des-dates-dans-les-formulaires)
+    - [9.3.4. Développement des classes métier](#934-développement-des-classes-métier)
+      - [9.3.4.1. Responsable](#9341-responsable)
+      - [9.3.4.2. MyDbContext](#9342-mydbcontext)
+    - [9.3.5. Développement des vues et des contrôleurs](#935-développement-des-vues-et-des-contrôleurs)
+      - [9.3.5.1. Affichage de la liste des employés](#9351-affichage-de-la-liste-des-employés)
+      - [9.3.5.2. Affichage de la liste des absences](#9352-affichage-de-la-liste-des-absences)
+      - [9.3.5.3. Gestion de la saisie des dates dans les formulaires](#9353-gestion-de-la-saisie-des-dates-dans-les-formulaires)
 - [10. Tests](#10-tests)
   - [10.1. Scénario de test de l'authentification](#101-scénario-de-test-de-lauthentification)
   - [10.2. Scénario de test de la gestion du personnel](#102-scénario-de-test-de-la-gestion-du-personnel)
@@ -36,8 +47,11 @@
     - [10.2.3. Supprimer un employé](#1023-supprimer-un-employé)
   - [10.3. Scénario de test de la gestion des absences](#103-scénario-de-test-de-la-gestion-des-absences)
     - [10.3.1. Ajouter une absence](#1031-ajouter-une-absence)
+      - [10.3.1.1. Vérification du chevauchement des dates](#10311-vérification-du-chevauchement-des-dates)
     - [10.3.2. Modifier une absence](#1032-modifier-une-absence)
     - [10.3.3. Supprimer une absence](#1033-supprimer-une-absence)
+  
+<div class="page"/>
 
 ## 1. Description
 
@@ -59,7 +73,7 @@ Cela signifie que vous pouvez l'utiliser, le modifier et le distribuer comme bon
 ### 3.1. BddManager.cs
 
 Le fichier BddManager.cs est une adaptation du code fourni par le professeur et n'est pas concerné par la licence MIT. Il reste la propriété de l'auteur original et ne doit pas être utilisé en dehors du cadre de ce projet.  
-
+<div class="page"/>
 
 ## 4. Documentation du code source
 
@@ -95,6 +109,7 @@ La publication de la documentation est effectuée automatiquement à chaque push
 Cette application est écrite en C# et utilise le framework .NET 8.0 accompagné de la couche interface utilisateur Microsoft WPF.  
 Ses données sont stockées dans une base de données MySQL installée sur le poste de l'utilisateur.  
 L'accès à la base de données se fait via Entity Framework Core et la classe d'accès BddManager.
+<div class="page"/>
 
 ## 7. Contexte de l'application
 
@@ -174,6 +189,7 @@ Le fonctionnement est simple; sur la page d'accueil de l'application, la liste d
 Un bouton `Ajouter` permet d'ajouter un employé.  
 Après avoir sélectionné un employé dans la liste, le bouton `Modifier` permet de modifier les informations de l'employé.
 Après avoir sélectionné un employé dans la liste, le bouton `Supprimer` permet de supprimer l'employé.
+<div class="page"/>
 
 ## 9. Processus de développement
 
@@ -250,7 +266,7 @@ Le code source est versionné et les modifications sont commentées pour facilit
 Pour se conformer aux standards de GitHub, nous avons ajouté un fichier `README.md` à la racine du dépôt. Ce fichier contient une description du projet, une licence, une documentation du code source et des informations sur le processus de développement. Ce fichier est écrit en Markdown pour faciliter la lecture sur le site GitHub. Une version PDF est également disponible pour une lecture hors ligne.  
 
 Le dépôt a été initialisé avec un fichier `.gitignore` pour ignorer les fichiers temporaires et les fichiers de configuration de Visual Studio.
-```powershell
+```ps
 git init
 git config --global user.email "briacl@cned"
 git config --global user.name "briacl"
@@ -259,25 +275,25 @@ git commit -m "Initial commit"
 git branch -M main
 git remote add origin git@github.com:/briacl/Mediatek86.git
 git push -u origin main
-```	
+```
 
-#### 1.9.3.4. Développement des classes métier
+#### 9.3.4. Développement des classes métier
 
 Les classes métier ont été développées en suivant le modèle MVC.  
 Les classes `Personnel`, `Service`, `Motif`, `Responsable` et `Absence` ont été créées dans le [répertoire Models](https://github.com/briacl/Mediatek86/tree/main/Mediatek86/Models).  
 
-##### 1.9.3.4.1. [Responsable](https://briacl.github.io/Mediatek86/html/T_Mediatek86_Models_Responsable.htm)
+##### 9.3.4.1. [Responsable](https://briacl.github.io/Mediatek86/html/T_Mediatek86_Models_Responsable.htm)
 
 La classe `Responsable` est une classe métier qui représente un utilisateur de l'application.  
 Elle inclut une [méthode](https://github.com/briacl/Mediatek86/blob/main/Mediatek86/Models/Responsable.cs#L30L39) `VerifierMotDePasse` qui permet de vérifier si le mot de passe saisi par l'utilisateur est correct.
 
-##### 1.9.3.4.2. [MyDbContext](https://briacl.github.io/Mediatek86/html/T_Mediatek86_Data_MyDbContext.htm)
+##### 9.3.4.2. [MyDbContext](https://briacl.github.io/Mediatek86/html/T_Mediatek86_Data_MyDbContext.htm)
 
 La classe `MyDbContext` est une classe qui hérite de `DbContext` et permet de faire correspondres les tables de la base de données avec les classes métiers. Elle met à profit les fonctionnalités d'Entity Framework et du connecteur natif Oracle MySql.Data pour simplifier l'accès aux données.  
 Nous avons choisi cette approche car c'est aujourd'hui la méthode la plus couramment utilisée pour accéder aux bases de données dans les applications .NET. 
 Elle permet de simplifier le code en utilisant des classes métiers pour manipuler les données au lieu d'écrire des requêtes SQL à la main. Cette approche ORM (Object-Relational Mapping) permet de réduire les erreurs et de faciliter la maintenance du code. Cela permet également de bénéficier des fonctionnalités avancées d'Entity Framework telles que le suivi des modifications, les migrations de base de données et les requêtes LINQ.
 
-### Développement des vues et des contrôleurs
+#### 9.3.5. Développement des vues et des contrôleurs
 
 Les vues de l'application ont été créées en utilisant le designer de Visual Studio. Le choix du WPF a été fait pour sa facilité d'utilisation et sa compatibilité avec les applications Windows. De plus le WPF permet de créer des interfaces utilisateur riches et interactives. Même si l'application Mediatek86 est extrêmement simple, en théorie le WPF permet de créer des interfaces utilisateur modernes et ergonomiques.
 
@@ -294,15 +310,15 @@ Personnel? currentPersonnel = myDataGrid.SelectedItem as Personnel;
             }
 ```
 
-#### 9.3.4. Affichage de la liste des employés
+##### 9.3.5.1. Affichage de la liste des employés
 
 La liste des employés est affichée dans un DataGrid. Le DataGrid est un contrôle WPF qui permet d'afficher des données sous forme de tableau. Il est très flexible et permet de personnaliser l'affichage des données. Dans notre cas, nous avons utilisé un DataGrid pour afficher les employés. Chaque ligne du DataGrid correspond à un employé. Les colonnes du DataGrid correspondent aux propriétés de l'employé. Par exemple, la colonne `Nom` affiche le nom de l'employé, la colonne `Prénom` affiche le prénom de l'employé, etc.
 
-#### 9.3.5. Affichage de la liste des absences
+##### 9.3.5.2. Affichage de la liste des absences
 
 La liste des absences est affichée dans un DataGrid de la même manière que la liste des employés. Chaque ligne du DataGrid correspond à une absence. Les colonnes du DataGrid correspondent aux propriétés de l'absence. Par exemple, la colonne `Date` affiche la date de l'absence, la colonne `Motif` affiche le motif de l'absence, etc.
 
-#### 9.3.6. Gestion de la saisie des dates dans les formulaires
+##### 9.3.5.3. Gestion de la saisie des dates dans les formulaires
 
 Pour faciliter la saisie des dates dans les formulaires, nous avons utilisé un contrôle DatePicker. Le DatePicker est un contrôle WPF qui permet de sélectionner une date dans un calendrier. Il est très pratique pour les formulaires de saisie de dates. Dans notre cas, nous avons utilisé un DatePicker pour saisir la date de début et la date de fin d'une absence. L'utilisateur peut sélectionner une date en cliquant sur le calendrier et en choisissant une date dans le calendrier. La date sélectionnée est automatiquement mise à jour dans le champ de saisie de la date.
 
@@ -384,6 +400,14 @@ On contrôle alors que l'absence a bien été ajoutée en consultant la liste de
 
 ![22-ajouter_absence_vérification](https://github.com/briacl/Mediatek86/assets/102411894/25124a50-4c1a-47c4-bbba-bd0cf0df5854)
 
+
+##### 10.3.1.1. Vérification du chevauchement des dates
+
+Pour éviter les chevauchements de dates, nous avons ajouté une vérification dans la méthode `Chevauche` de la classe `Absence`. Cette vérification consiste à vérifier si la date de début et la date de fin de l'absence à ajouter chevauchent les dates d'une autre absence pour le même employé. Si un chevauchement est détecté, un message d'erreur est renvoyé pour indiquer que l'absence ne peut pas être ajoutée.
+
+On teste cette fonctionnalité en ajoutant une absence qui chevauche une autre absence pour le même employé. Un message d'erreur s'affiche pour indiquer que l'absence ne peut pas être ajoutée.
+
+![23-ajouter_absence_chevauchement]()
 
 #### 10.3.2. Modifier une absence
 

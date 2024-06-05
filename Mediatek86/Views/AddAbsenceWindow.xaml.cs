@@ -43,6 +43,8 @@ namespace Mediatek86.Views
                 MessageBox.Show("La date de début doit être antérieure à la date de fin.");
                 return;
             }
+            // On vérifie que l'absence ne chevauche pas une autre absence
+
             // Créer une nouvelle absence avec les données entrées
             Absence newAbsence = new Absence
             {
@@ -51,6 +53,12 @@ namespace Mediatek86.Views
                 DateFin = DateFinPicker.SelectedDate.Value,
                 IdMotif = ((Motif)MotifComboBox.SelectedItem).IdMotif
             };
+
+            if (newAbsence.Chevauche(personnel))
+            {
+                MessageBox.Show("L'absence chevauche une autre absence.");
+                return;
+            }
 
             // Ajouter la nouvelle absence à la base de données
             AddAbsence(newAbsence);
