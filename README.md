@@ -311,7 +311,17 @@ Après confirmation on vérifie que les modifications ont bien été enregistré
 On clique sur le bouton `Supprimer` pour supprimer un employé. Un message de confirmation s'affiche pour confirmer la suppression de l'employé. Conformément au cahier des charges, un message de confirmation s'affiche pour confirmer la suppression de l'employé.  
 ![14-confirmation_suppression](https://github.com/briacl/Mediatek86/assets/102411894/29738d83-0183-4b54-a7b4-eb56cbef3e0e)
 
-Après confirmation on vérifie que l'employé a bien été supprimé en consultant la liste des employés.
+Après confirmation on vérifie que l'employé a bien été supprimé en consultant la liste des employés.  
+![22-ajouter_absence_vérification](https://github.com/briacl/Mediatek86/assets/102411894/25124a50-4c1a-47c4-bbba-bd0cf0df5854)
+![21-ajouter_absence_confirmation](https://github.com/briacl/Mediatek86/assets/102411894/ea0ef504-1a2f-4d59-8ff5-80fdd0fafdd9)
+![20-ajouter_absence](https://github.com/briacl/Mediatek86/assets/102411894/c8211447-c47c-46de-80cc-7810c57aef9e)
+![19-modifier_absence_effectuee](https://github.com/briacl/Mediatek86/assets/102411894/86d7818a-62ab-4259-b523-cba79e24ba0b)
+![18-modifier_absence_confirmation](https://github.com/briacl/Mediatek86/assets/102411894/a97ccf01-6e0e-46a3-85b3-fca57471455b)
+![17-modifier_absence](https://github.com/briacl/Mediatek86/assets/102411894/539f5f12-2f74-4e3c-9ddc-67628ced56b1)
+![16-liste_absences_defaut_selection](https://github.com/briacl/Mediatek86/assets/102411894/4d5c7303-4667-4325-a8e3-460c1f9a37c7)
+![15-liste_absences](https://github.com/briacl/Mediatek86/assets/102411894/c0728719-f8f0-4f8c-93e0-282cee0cc5c3)
+![23-supprimer_absence_confirmation](https://github.com/briacl/Mediatek86/assets/102411894/17fd0df2-03d4-4a9f-8a6d-3663b55c855f)
+
 
 ![06-Capture d’écran 2024-06-04 185459](https://github.com/briacl/Mediatek86/assets/102411894/a6796c6d-131b-41fc-88bb-d6320c975524)
 
