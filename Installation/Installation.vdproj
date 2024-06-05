@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0B9F0F9540CB4715B5D8971AD7B10B9D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1AE0DF89990E415A8E6D9B8AAEDF7C62"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -82,6 +88,12 @@
         "Entry"
         {
         "MsmKey" = "8:_E01DD9F0162D43F98D8FCE43F99115B9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E2BA12FAAF6E4D1683755A0F8C9BAA63"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -160,6 +172,26 @@
             {
             "SourcePath" = "8:..\\Documentation\\Help\\GeneralError.html"
             "TargetName" = "8:GeneralError.html"
+            "Tag" = "8:"
+            "Folder" = "8:_0D9C3852A5174C8C829B256757D38059"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0B9F0F9540CB4715B5D8971AD7B10B9D"
+            {
+            "SourcePath" = "8:..\\Mediatek86\\bin\\Release\\net8.0-windows10.0.17763.0\\Mediatek86.exe"
+            "TargetName" = "8:Mediatek86.exe"
             "Tag" = "8:"
             "Folder" = "8:_0D9C3852A5174C8C829B256757D38059"
             "Condition" = "8:"
@@ -453,7 +485,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Mediatek86"
         "ProductCode" = "8:{B5907746-1700-4E76-BAEE-74D519279C65}"
-        "PackageCode" = "8:{36954EA0-B434-4D97-8EB3-ED85D9266AD8}"
+        "PackageCode" = "8:{EB6FE01F-0F6F-460D-AAB3-283271BF49D8}"
         "UpgradeCode" = "8:{283C19DA-30A3-4AA5-B33A-AD20A22065AB}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -579,12 +611,12 @@
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_AC10B3377C924F858D1CBDDF7582EA75"
+            "Target" = "8:_0B9F0F9540CB4715B5D8971AD7B10B9D"
             "Folder" = "8:_286F1659358D4F508B0FE1FCA147C966"
             "WorkingFolder" = "8:_0D9C3852A5174C8C829B256757D38059"
-            "Icon" = "8:_1AE0DF89990E415A8E6D9B8AAEDF7C62"
+            "Icon" = "8:_0B9F0F9540CB4715B5D8971AD7B10B9D"
             "Feature" = "8:"
             }
         }
@@ -1008,6 +1040,34 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{992A2ED3-7AAF-4F30-AE54-ADEA65BD9020}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E2BA12FAAF6E4D1683755A0F8C9BAA63"
+            {
+            "SourcePath" = "8:..\\Mediatek86\\obj\\Release\\net8.0-windows10.0.17763.0\\apphost.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_0D9C3852A5174C8C829B256757D38059"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:PublishItems"
             "OutputProjectGuid" = "8:{992A2ED3-7AAF-4F30-AE54-ADEA65BD9020}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
